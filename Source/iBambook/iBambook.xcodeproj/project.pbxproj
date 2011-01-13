@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B54DB20512DF0586006E12E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DB20412DF0586006E12E8 /* Cocoa.framework */; };
+		B54DB20F12DF0586006E12E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B54DB20D12DF0586006E12E8 /* InfoPlist.strings */; };
+		B54DB21212DF0586006E12E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21112DF0586006E12E8 /* main.m */; };
+		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
+		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
+		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B54DB20012DF0586006E12E8 /* iBambook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBambook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54DB20412DF0586006E12E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B54DB20712DF0586006E12E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B54DB20812DF0586006E12E8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B54DB20912DF0586006E12E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B54DB20C12DF0586006E12E8 /* iBambook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBambook-Info.plist"; sourceTree = "<group>"; };
+		B54DB20E12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B54DB21012DF0586006E12E8 /* iBambook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBambook-Prefix.pch"; sourceTree = "<group>"; };
+		B54DB21112DF0586006E12E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B54DB21412DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBambookAppDelegate.h; sourceTree = "<group>"; };
+		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBambookAppDelegate.m; sourceTree = "<group>"; };
+		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B54DB1FD12DF0586006E12E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54DB20512DF0586006E12E8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B54DB1F512DF0586006E12E8 = {
+			isa = PBXGroup;
+			children = (
+				B54DB20A12DF0586006E12E8 /* iBambook */,
+				B54DB20312DF0586006E12E8 /* Frameworks */,
+				B54DB20112DF0586006E12E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B54DB20112DF0586006E12E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B54DB20012DF0586006E12E8 /* iBambook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B54DB20312DF0586006E12E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B54DB20412DF0586006E12E8 /* Cocoa.framework */,
+				B54DB20612DF0586006E12E8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B54DB20612DF0586006E12E8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B54DB20712DF0586006E12E8 /* AppKit.framework */,
+				B54DB20812DF0586006E12E8 /* CoreData.framework */,
+				B54DB20912DF0586006E12E8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B54DB20A12DF0586006E12E8 /* iBambook */ = {
+			isa = PBXGroup;
+			children = (
+				B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */,
+				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
+				B54DB21912DF0586006E12E8 /* MainMenu.xib */,
+				B54DB20B12DF0586006E12E8 /* Supporting Files */,
+			);
+			path = iBambook;
+			sourceTree = "<group>";
+		};
+		B54DB20B12DF0586006E12E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B54DB20C12DF0586006E12E8 /* iBambook-Info.plist */,
+				B54DB20D12DF0586006E12E8 /* InfoPlist.strings */,
+				B54DB21012DF0586006E12E8 /* iBambook-Prefix.pch */,
+				B54DB21112DF0586006E12E8 /* main.m */,
+				B54DB21312DF0586006E12E8 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B54DB1FF12DF0586006E12E8 /* iBambook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54DB21E12DF0586006E12E8 /* Build configuration list for PBXNativeTarget "iBambook" */;
+			buildPhases = (
+				B54DB1FC12DF0586006E12E8 /* Sources */,
+				B54DB1FD12DF0586006E12E8 /* Frameworks */,
+				B54DB1FE12DF0586006E12E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBambook;
+			productName = iBambook;
+			productReference = B54DB20012DF0586006E12E8 /* iBambook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B54DB1F712DF0586006E12E8 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = B54DB1FA12DF0586006E12E8 /* Build configuration list for PBXProject "iBambook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B54DB1F512DF0586006E12E8;
+			productRefGroup = B54DB20112DF0586006E12E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B54DB1FF12DF0586006E12E8 /* iBambook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B54DB1FE12DF0586006E12E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54DB20F12DF0586006E12E8 /* InfoPlist.strings in Resources */,
+				B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */,
+				B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B54DB1FC12DF0586006E12E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54DB21212DF0586006E12E8 /* main.m in Sources */,
+				B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B54DB20D12DF0586006E12E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B54DB20E12DF0586006E12E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B54DB21312DF0586006E12E8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B54DB21412DF0586006E12E8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		B54DB21912DF0586006E12E8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B54DB21A12DF0586006E12E8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B54DB21C12DF0586006E12E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B54DB21D12DF0586006E12E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B54DB21F12DF0586006E12E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBambook/iBambook-Prefix.pch";
+				INFOPLIST_FILE = "iBambook/iBambook-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B54DB22012DF0586006E12E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBambook/iBambook-Prefix.pch";
+				INFOPLIST_FILE = "iBambook/iBambook-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B54DB1FA12DF0586006E12E8 /* Build configuration list for PBXProject "iBambook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54DB21C12DF0586006E12E8 /* Debug */,
+				B54DB21D12DF0586006E12E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54DB21E12DF0586006E12E8 /* Build configuration list for PBXNativeTarget "iBambook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54DB21F12DF0586006E12E8 /* Debug */,
+				B54DB22012DF0586006E12E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B54DB1F712DF0586006E12E8 /* Project object */;
+}
