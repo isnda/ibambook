@@ -7,27 +7,34 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "iBambookAppDelegate.h"
 
 @class SeparatorCell;
 
 @interface SideBarController : NSViewController {
 @private
-    IBOutlet NSSplitView *splitView;
-    
 	NSMutableArray *contents;
     
-	NSImage *folderImage;
-	NSImage *urlImage;
-
 	BOOL duringStartUp; // Signifies building the sidebar at startup
     
+	NSImage *imageFolder;
+	NSImage *imageURL;
+	NSImage *imageDefault;
+    
     SeparatorCell *separatorCell;
+    
+    iBambookAppDelegate *appDelegate;
 
+    NSSplitView *splitView;
     NSTreeController *treeController;
     NSOutlineView *sideBarView;
 }
+@property (assign) IBOutlet NSSplitView *splitView;
 @property (assign) IBOutlet NSTreeController *treeController;
 @property (assign) IBOutlet NSOutlineView *sideBarView;
+
+@property (assign) iBambookAppDelegate *appDelegate;
+
 
 - (void)setContents:(NSArray *)newContents;
 - (NSMutableArray *)contents;

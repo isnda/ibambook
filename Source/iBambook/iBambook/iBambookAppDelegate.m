@@ -7,6 +7,8 @@
 //
 
 #import "iBambookAppDelegate.h"
+#import "SideBarController.h"
+
 
 #define kMinSideBarWidth 200.0f
 
@@ -16,11 +18,13 @@
 @synthesize window;
 @synthesize splitView;
 @synthesize sideBarView;
-@synthesize contentView;
+@synthesize containerView;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-
     SideBarController* sideBarController = [[SideBarController alloc] initWithNibName:@"SideBarController" bundle:nil];
+    
+    // SideBarController uses this delegate control content view switch
+    [sideBarController setAppDelegate:self];
     
     NSView* v1 = [sideBarController view];
     [v1 setFrame:[sideBarView frame]];
@@ -58,6 +62,29 @@
     
 	[left setFrame:leftFrame];
 	[right setFrame:rightFrame];
+}
+
+
+#pragma mark - Content View Switcher
+
+- (void)removeContentView
+{
+	// Empty selection
+	NSArray *subViews = [containerView subviews];
+	if ([subViews count] > 0)
+	{
+		[[subViews objectAtIndex:0] removeFromSuperview];
+	}
+	
+	[containerView displayIfNeeded];	// We want the removed views to disappear right away
+    
+    currentContentView = nil;
+}
+
+- (void)changeContentView:(NSString *)urlString
+{
+    // TODO: Load corresponding content view via selected item's URL
+    NSLog(@"Enter changeContentView with URL=%@", urlString);
 }
 
 

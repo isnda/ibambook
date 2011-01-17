@@ -19,6 +19,7 @@
 #define ACCOUNTS_NAME       @"ACCOUNTS"
 
 #define UNTITLED_NAME		@"Untitled"
+#define FILE_PATH_PREFIX	@"/"
 #define HTTP_PREFIX			@"http://"
 
 
@@ -40,9 +41,12 @@
 @property (readonly) NSString *nodeURL;
 @property (readonly) NSString *nodeName;
 @property (readonly) BOOL selectItsParent;
+
 @end
 
+
 @implementation TreeAdditionObj
+
 @synthesize indexPath, nodeURL, nodeName, selectItsParent;
 
 - (id)initWithURL:(NSString *)url withName:(NSString *)name selectItsParent:(BOOL)select
@@ -55,6 +59,7 @@
 	
 	return self;
 }
+
 @end
 
 
@@ -63,8 +68,11 @@
 // --------------------------------------------------------------------
 @implementation SideBarController
 
+@synthesize splitView;
 @synthesize treeController;
 @synthesize sideBarView;
+
+@synthesize appDelegate;
 
 
 // --------------------------------------------------------------------
@@ -91,11 +99,14 @@
 - (void)initReusedIcons {
     // Cache the reused icon images.
     // TODO: These 2 icons are just for demo
-    folderImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)] retain];
-    [folderImage setSize:NSMakeSize(16, 16)];
+    imageFolder = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)] retain];
+    [imageFolder setSize:NSMakeSize(16, 16)];
     
-    urlImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericURLIcon)] retain];
-    [urlImage setSize:NSMakeSize(16, 16)];
+    imageURL = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericURLIcon)] retain];
+    [imageURL setSize:NSMakeSize(16, 16)];
+
+    imageDefault = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode('DOCU')] retain];
+    [imageDefault setSize:NSMakeSize(16, 16)];
 }
 
 
@@ -111,8 +122,8 @@
 
 - (void)dealloc {
     [contents release];
-    [folderImage release];
-    [urlImage release];
+    [imageFolder release];
+    [imageURL release];
     
     [super dealloc];
 }
@@ -237,6 +248,7 @@
 				[node setNodeTitle:[[NSFileManager defaultManager] displayNameAtPath:[node urlString]]];
 		}
 		else {
+            // TODO: Needs correct default node setting
 			[node setNodeTitle:UNTITLED_NAME];
 			[node setURL:HTTP_PREFIX];
 		}
@@ -327,7 +339,7 @@
 }
 
 
-#pragma mark - NSOutlineView delegation
+#pragma mark - NSOutlineView Delegate
 
 // --------------------------------------------------------------------
 // Side bar delegation
@@ -392,16 +404,19 @@
     if (item) {
         if ([item isLeaf]) {
             NSString *urlStr = [item urlString];
+            
             if (urlStr) {
                 if ([item isLeaf]) {
                     // TODO: Icon should be choosen via more thorough protocol analysis on url string
-                    if ([[item urlString] hasPrefix:HTTP_PREFIX])
-                        imageIcon = urlImage;
-                    else
+                    if ([urlStr hasPrefix:HTTP_PREFIX])
+                        imageIcon = imageURL;
+                    else if ([urlStr hasPrefix:FILE_PATH_PREFIX])
                         imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
+                    else
+                        imageIcon = imageDefault;
                 }
                 else {
-                    imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
+                    imageIcon = imageFolder;
                 }
             }
             else {
@@ -415,7 +430,7 @@
             }
             else {
                 // It's a folder, use the folderImage as its icon
-                imageIcon = folderImage;
+                imageIcon = imageFolder;
             }
         }
     }
@@ -441,6 +456,46 @@
 {
 	return ([self isSpecialGroup:[item representedObject]]);
 }
+
+- (void)removeContentView {
+    [appDelegate removeContentView];
+}
+
+- (void)changeContentView {
+    NSArray *selection = [treeController selectedNodes];	
+	BaseNode *node = [[selection objectAtIndex:0] representedObject];
+	NSString *urlStr = [node urlString];
+    
+    [appDelegate changeContentView:urlStr];
+}
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification
+{
+	if (duringStartUp)	// During startup don't change any view selections
+		return;
+    
+	// Ask the tree controller for the current selection
+	NSArray *selection = [treeController selectedObjects];
+	if ([selection count] > 1)
+	{
+		// Multiple selection - clear the right side view
+		[self removeContentView];
+	}
+	else
+	{
+		if ([selection count] == 1)
+		{
+			// Single selection
+			[self changeContentView];
+		}
+		else
+		{
+			// There is no current selection - no view to display
+			[self removeContentView];
+		}
+	}
+}
+
 
 
 @end

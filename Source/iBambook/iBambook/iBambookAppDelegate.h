@@ -7,19 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "SideBarController.h"
 
 @interface iBambookAppDelegate : NSObject <NSApplicationDelegate> {
-
+@private
+    NSView *currentContentView;
+    
     NSWindow *window;
     NSSplitView *splitView;
     NSView *sideBarView;
-    NSView *contentView;
+    NSView *containerView;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSSplitView *splitView;
 @property (assign) IBOutlet NSView *sideBarView;
-@property (assign) IBOutlet NSView *contentView;
+@property (assign) IBOutlet NSView *containerView;
+
+- (void)removeContentView;
+- (void)changeContentView:(NSString *)urlString;
 
 @end
