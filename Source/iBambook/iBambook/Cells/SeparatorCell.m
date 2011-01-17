@@ -7,7 +7,7 @@
 
 - (id)copyWithZone:(NSZone *)zone
 {
-    SeparatorCell *cell = (SeparatorCell*)[super copyWithZone:zone];
+    SeparatorCell *cell = (SeparatorCell *)[super copyWithZone:zone];
     return cell;
 }
 
@@ -26,7 +26,7 @@
 	NSRectFill(NSMakeRect(cellFrame.origin.x + lineX, cellFrame.origin.y + lineY + 1, lineWidth, 1));
 }
 
-- (void)selectWithFrame:(NSRect)aRect inView:(NSView*)controlView editor:(NSText*)textObj delegate:(id)anObject start:(NSInteger)selStart length:(NSInteger)selLength
+- (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject start:(NSInteger)selStart length:(NSInteger)selLength
 {
 }
 

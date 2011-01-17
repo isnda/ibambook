@@ -19,15 +19,15 @@
 	NSImage *folderImage;
 	NSImage *urlImage;
 
-	BOOL buildingSideBar; // Signifies we are building the sidebar content at launch time
+	BOOL duringStartUp; // Signifies building the sidebar at startup
     
     SeparatorCell *separatorCell;
 
     NSTreeController *treeController;
-    NSOutlineView *sidebarView;
+    NSOutlineView *sideBarView;
 }
 @property (assign) IBOutlet NSTreeController *treeController;
-@property (assign) IBOutlet NSOutlineView *sidebarView;
+@property (assign) IBOutlet NSOutlineView *sideBarView;
 
 - (void)setContents:(NSArray *)newContents;
 - (NSMutableArray *)contents;

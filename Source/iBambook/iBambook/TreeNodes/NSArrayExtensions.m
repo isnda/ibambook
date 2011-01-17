@@ -10,7 +10,7 @@
 	return [self indexOfObjectIdenticalTo:obj] != NSNotFound; 
 }
 
-- (BOOL)containsAnyObjectsIdenticalTo:(NSArray*)objects
+- (BOOL)containsAnyObjectsIdenticalTo:(NSArray *)objects
 {
 	NSEnumerator *e = [objects objectEnumerator];
 	id obj;
@@ -22,7 +22,7 @@
 	return NO;
 }
 
-- (NSIndexSet*)indexesOfObjects:(NSArray*)objects
+- (NSIndexSet*)indexesOfObjects:(NSArray *)objects
 {
 	NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
 	NSEnumerator *enumerator = [objects objectEnumerator];

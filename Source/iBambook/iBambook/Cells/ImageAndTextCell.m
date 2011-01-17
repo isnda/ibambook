@@ -32,14 +32,14 @@
     [super dealloc];
 }
 
-- (id)copyWithZone:(NSZone*)zone
+- (id)copyWithZone:(NSZone *)zone
 {
-    ImageAndTextCell *cell = (ImageAndTextCell*)[super copyWithZone:zone];
+    ImageAndTextCell *cell = (ImageAndTextCell *)[super copyWithZone:zone];
     cell->image = [image retain];
     return cell;
 }
 
-- (void)setImage:(NSImage*)anImage
+- (void)setImage:(NSImage *)anImage
 {
     if (anImage != image)
 	{
@@ -49,7 +49,7 @@
     }
 }
 
-- (NSImage*)image
+- (NSImage *)image
 {
     return image;
 }
@@ -59,9 +59,9 @@
     return ([self image] == nil && [[self title] length] > 0);
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Returns the proper bound for the cell's title while being edited
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 - (NSRect)titleRectForBounds:(NSRect)cellRect
 {	
 	// the cell has an image: draw the normal item cell
@@ -85,7 +85,7 @@
 	return newFrame;
 }
 
-- (void)editWithFrame:(NSRect)aRect inView:(NSView*)controlView editor:(NSText*)textObj delegate:(id)anObject event:(NSEvent*)theEvent
+- (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)textObj delegate:(id)anObject event:(NSEvent *)theEvent
 {
 	NSRect textFrame = [self titleRectForBounds:aRect];
 	[super editWithFrame:textFrame inView:controlView editor:textObj delegate:anObject event:theEvent];
@@ -97,7 +97,7 @@
 	[super selectWithFrame:textFrame inView:controlView editor:textObj delegate:anObject start:selStart length:selLength];
 }
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView*)controlView
+- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
 	if (image != nil)
 	{
@@ -144,22 +144,23 @@
     return cellSize;
 }
 
-// -------------------------------------------------------------------------------
-//	In 10.5, we need you to implement this method for blocking drag and drop of a given cell.
-//	So NSCell hit testing will determine if a row can be dragged or not.
-//
-//	NSTableView calls this cell method when starting a drag, if the hit cell returns
-//	NSCellHitTrackableArea, the particular row will be tracked instead of dragged.
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
+//	In 10.5, we need you to implement this method for blocking drag and
+//  drop of a given cell. So NSCell hit testing will determine if a row
+//  can be dragged or not.
+//	NSTableView calls this cell method when starting a drag, if the hit
+//  cell returns NSCellHitTrackableArea, the particular row will be 
+//  tracked instead of dragged.
+// --------------------------------------------------------------------
 - (NSUInteger)hitTestForEvent:(NSEvent *)event inRect:(NSRect)cellFrame ofView:(NSView *)controlView
 {
 	NSInteger result = NSCellHitContentArea;
 	
-	NSOutlineView* hostingOutlineView = (NSOutlineView*)[self controlView];
+	NSOutlineView *hostingOutlineView = (NSOutlineView *)[self controlView];
 	if (hostingOutlineView)
 	{
 		NSInteger selectedRow = [hostingOutlineView selectedRow];
-		BaseNode* node = [[hostingOutlineView itemAtRow:selectedRow] representedObject];
+		BaseNode *node = [[hostingOutlineView itemAtRow:selectedRow] representedObject];
 
 		if (![node isDraggable])	// is the node isDraggable (i.e. non-file system based objects)
 			result = NSCellHitTrackableArea;

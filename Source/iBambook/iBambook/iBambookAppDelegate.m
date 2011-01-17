@@ -20,15 +20,11 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
-    NSLog(@"Entering init...");
-    
     SideBarController* sideBarController = [[SideBarController alloc] initWithNibName:@"SideBarController" bundle:nil];
     
     NSView* v1 = [sideBarController view];
     [v1 setFrame:[sideBarView frame]];
     [sideBarView addSubview:v1];
-
-    NSLog(@"Quitting init...");
 }
 
 
@@ -46,7 +42,7 @@
 
 - (void)splitView:(NSSplitView*)sender resizeSubviewsWithOldSize:(NSSize)oldSize
 {
-	NSRect newFrame = [sender frame]; // get the new size of the whole splitView
+	NSRect newFrame = [sender frame]; // Get the new size of the whole splitView
 	NSView *left = [[sender subviews] objectAtIndex:0];
 	NSRect leftFrame = [left frame];
 	NSView *right = [[sender subviews] objectAtIndex:1];

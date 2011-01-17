@@ -12,7 +12,7 @@
 #import "SeparatorCell.h"
 
 
-#define COLUMNID_NAME		@"NameColumn"
+#define COLUMNID_NAME		@"COLUMN_MAIN"
 
 #define RESOURCE_NAME       @"RESOURCE"
 #define DEVICES_NAME        @"DEVICES"
@@ -64,11 +64,12 @@
 @implementation SideBarController
 
 @synthesize treeController;
-@synthesize sidebarView;
+@synthesize sideBarView;
 
-// -------------------------------------------------------------------------------
+
+// --------------------------------------------------------------------
 //	Property: contents
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 - (void)setContents:(NSArray*)newContents
 {
 	if (contents != newContents)
@@ -84,19 +85,25 @@
 }
 
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	SideBarController Lifecycle
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
+- (void)initReusedIcons {
+    // Cache the reused icon images.
+    // TODO: These 2 icons are just for demo
+    folderImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)] retain];
+    [folderImage setSize:NSMakeSize(16, 16)];
+    
+    urlImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericURLIcon)] retain];
+    [urlImage setSize:NSMakeSize(16, 16)];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         contents = [[NSMutableArray alloc] init];
         
-		// Cache the reused icon images
-		folderImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)] retain];
-		[folderImage setSize:NSMakeSize(16, 16)];
-		
-		urlImage = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericURLIcon)] retain];
-		[urlImage setSize:NSMakeSize(16, 16)];
+        [self initReusedIcons];
     }
     
     return self;
@@ -112,7 +119,7 @@
 
 - (void)awakeFromNib {
 	// Apply our custom ImageAndTextCell for rendering the first column's cells
-	NSTableColumn *tableColumn = [sidebarView tableColumnWithIdentifier:COLUMNID_NAME];
+	NSTableColumn *tableColumn = [sideBarView tableColumnWithIdentifier:COLUMNID_NAME];
 	ImageAndTextCell *imageAndTextCell = [[[ImageAndTextCell alloc] init] autorelease];
 	[imageAndTextCell setEditable:YES];
 	[tableColumn setDataCell:imageAndTextCell];
@@ -120,18 +127,19 @@
 	separatorCell = [[SeparatorCell alloc] init];
     [separatorCell setEditable:NO];
 
-    // Init sidebar content on a separate thread, some portions may involve device access and time consuming
+    // Init sidebar content on a separate thread for some portions may involve device access and time consuming
     [NSThread detachNewThreadSelector:@selector(populateSideBarContents:)
-                             toTarget:self		// We are the target
+                             toTarget:self		// We are the target!
                            withObject:nil];
     
     // Scroll to the top in case the outline contents is very long
-	[[[sidebarView enclosingScrollView] verticalScroller] setFloatValue:0.0];
-	[[[sidebarView enclosingScrollView] contentView] scrollToPoint:NSMakePoint(0,0)];
+	[[[sideBarView enclosingScrollView] verticalScroller] setFloatValue:0.0];
+	[[[sideBarView enclosingScrollView] contentView] scrollToPoint:NSMakePoint(0,0)];
 	
-	// Make our sidebar view appear with gradient selection, and behave like the Finder, iTunes, etc.
-	[sidebarView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
+	// Make our side bar the SourceList style i.e. gradient selection, and behave like the Finder, iTunes, etc.
+	[sideBarView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
 }
+
 
 // --------------------------------------------------------------------
 // Side bar population and all helper methods
@@ -140,8 +148,8 @@
 {
 	if ([[treeController selectedNodes] count] > 0)
 	{
-		NSTreeNode* firstSelectedNode = [[treeController selectedNodes] objectAtIndex:0];
-		NSTreeNode* parentNode = [firstSelectedNode parentNode];
+		NSTreeNode *firstSelectedNode = [[treeController selectedNodes] objectAtIndex:0];
+		NSTreeNode *parentNode = [firstSelectedNode parentNode];
 		if (parentNode) {
 			NSIndexPath* parentIndex = [parentNode indexPath];
 			[treeController setSelectionIndexPath:parentIndex];
@@ -191,7 +199,7 @@
 {
 	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:nil withName:folderName selectItsParent:NO];
 	
-	if (buildingSideBar) {
+	if (duringStartUp) {
 		[self performSelectorOnMainThread:@selector(performAddFolder:) withObject:treeObjInfo waitUntilDone:YES];
 	}
 	else {
@@ -248,7 +256,7 @@
 {
 	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:url withName:nameStr selectItsParent:select];
 	
-	if (buildingSideBar) {
+	if (duringStartUp) {
 		[self performSelectorOnMainThread:@selector(performAddChild:) withObject:treeObjInfo waitUntilDone:YES];
 	}
 	else {
@@ -259,10 +267,10 @@
 }
 
 - (void)addResourceSection {
-	// add the "Places" section
 	[self addFolder:RESOURCE_NAME];
 	
-	// add its children
+	// Add all resource
+    // TODO: These child nodes are just for demo
 	[self addChild:NSHomeDirectory() withName:nil selectParent:YES];	
 	[self addChild:[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"] withName:nil selectParent:YES];	
 	[self addChild:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] withName:nil selectParent:YES];	
@@ -274,6 +282,8 @@
 - (void)addDevicesSection {
 	[self addFolder:DEVICES_NAME];
     
+	// Add all connected devices
+    // TODO: These child nodes are just for demo
 	NSArray *mountedVols = [[NSWorkspace sharedWorkspace] mountedLocalVolumePaths]; 
 	if ([mountedVols count] > 0) {
 		for (NSString *element in mountedVols)
@@ -284,40 +294,48 @@
 }
 
 - (void)addAccountsSection {
+    [self addFolder:ACCOUNTS_NAME];
     
+	// Add all managed accounts
+    // TODO: These child nodes are just for demo
+    [self addChild:@"neo" withName:@"Neo Lee" selectParent:NO];
+    
+    [self selectParentFromSelection];
 }
 
 - (void)populateSideBarContents:(id)inObject
 {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	buildingSideBar = YES;
+	duringStartUp = YES;
     
-	[sidebarView setHidden:YES];
+	[sideBarView setHidden:YES];
 	
 	[self addResourceSection];
 	[self addDevicesSection];
 	[self addAccountsSection];
 	
-	buildingSideBar = NO;
+	duringStartUp = NO;
 	
 	// Remove current selection
 	NSArray *selection = [treeController selectionIndexPaths];
 	[treeController removeSelectionIndexPaths:selection];
 	
-	[sidebarView setHidden:NO];
+	[sideBarView setHidden:NO];
 	
 	[pool release];
 }
+
 
 #pragma mark - NSOutlineView delegation
 
 // --------------------------------------------------------------------
 // Side bar delegation
 // --------------------------------------------------------------------
-
 - (BOOL)isSpecialGroup:(BaseNode *)groupNode
 {
+    // Using node title to determine the topest level(i.e. special) folder
+    // TODO: Should be more general
 	return ([groupNode nodeIcon] == nil &&
 			[[groupNode nodeTitle] isEqualToString:RESOURCE_NAME] || 
             [[groupNode nodeTitle] isEqualToString:DEVICES_NAME] || 
@@ -337,6 +355,8 @@
 	if ([[tableColumn identifier] isEqualToString:COLUMNID_NAME]) {
 		// We are being asked for the cell for the single and only column
 		BaseNode* node = [item representedObject];
+        
+        // If node has no icon nor title, it should be a separator
 		if ([node nodeIcon] == nil && [[node nodeTitle] length] == 0)
 			returnCell = separatorCell;
 	}
@@ -358,52 +378,60 @@
 		result = NO;
 	}
 	else {
-		if ([[item urlString] isAbsolutePath])
-			result = NO;
+		// TODO: Other tests for whether a cell is editable
+        
 	}
 	
 	return result;
 }
 
-- (void)outlineView:(NSOutlineView *)olv willDisplayCell:(NSCell*)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
+
+- (NSImage *)prepareIconForItem:(id)item {
+    NSImage *imageIcon = nil;
+    
+    if (item) {
+        if ([item isLeaf]) {
+            NSString *urlStr = [item urlString];
+            if (urlStr) {
+                if ([item isLeaf]) {
+                    // TODO: Icon should be choosen via more thorough protocol analysis on url string
+                    if ([[item urlString] hasPrefix:HTTP_PREFIX])
+                        imageIcon = urlImage;
+                    else
+                        imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
+                }
+                else {
+                    imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
+                }
+            }
+            else {
+                // It's a separator, don't bother with the icon
+            }
+        }
+        else {
+            // Check if it's a special folder (RESOURCE, DEVICES or ACCOUNTS), we don't want it to have an icon
+            if ([self isSpecialGroup:item]) {
+                imageIcon = nil;
+            }
+            else {
+                // It's a folder, use the folderImage as its icon
+                imageIcon = folderImage;
+            }
+        }
+    }
+    
+    return imageIcon;
+}
+
+- (void)outlineView:(NSOutlineView *)olv willDisplayCell:(NSCell *)cell forTableColumn:(NSTableColumn *)tableColumn item:(id)item
 {	 
 	if ([[tableColumn identifier] isEqualToString:COLUMNID_NAME]) {
 		if ([cell isKindOfClass:[ImageAndTextCell class]]) {
-			item = [item representedObject];
-			if (item) {
-				if ([item isLeaf]) {
-					NSString *urlStr = [item urlString];
-					if (urlStr) {
-						if ([item isLeaf]) {
-							NSImage *iconImage;
-							if ([[item urlString] hasPrefix:HTTP_PREFIX])
-								iconImage = urlImage;
-							else
-								iconImage = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
-                            
-							[item setNodeIcon:iconImage];
-						}
-						else {
-							NSImage* iconImage = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
-							[item setNodeIcon:iconImage];
-						}
-					}
-					else {
-						// It's a separator, don't bother with the icon
-					}
-				}
-				else {
-					// Check if it's a special folder (RESOURCE, DEVICES or ACCOUNTS), we don't want it to have an icon
-					if ([self isSpecialGroup:item]) {
-						[item setNodeIcon:nil];
-					}
-					else {
-						// It's a folder, use the folderImage as its icon
-						[item setNodeIcon:folderImage];
-					}
-				}
-			}
-			
+            item = [item representedObject];
+
+			NSImage *imageIcon = [self prepareIconForItem:item];
+            [item setNodeIcon:imageIcon];
+            
 			[(ImageAndTextCell*)cell setImage:[item nodeIcon]];
 		}
 	}

@@ -23,14 +23,14 @@
 	[super dealloc];
 }
 
-- (void)setDescription:(NSString*)newDescription
+- (void)setDescription:(NSString *)newDescription
 {
 	[newDescription retain];
 	[description release];
 	description = newDescription;
 }
 
-- (NSString*)description
+- (NSString *)description
 {
 	return description;
 }
@@ -43,15 +43,15 @@
 		[text replaceCharactersInRange:NSMakeRange(0, [text length]) withString:newText];
 }
 
-- (NSTextStorage*)text
+- (NSTextStorage *)text
 {
 	return text;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Maintain support for archiving and copying.
-// -------------------------------------------------------------------------------
-- (NSArray*)mutableKeys
+// --------------------------------------------------------------------
+- (NSArray *)mutableKeys
 {
 	return [[super mutableKeys] arrayByAddingObjectsFromArray:
 				[NSArray arrayWithObjects:@"description", @"text", nil]];

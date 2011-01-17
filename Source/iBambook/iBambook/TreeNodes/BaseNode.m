@@ -12,7 +12,7 @@
 	{
 		[self setNodeTitle:@"BaseNode Untitled"];
 		[self setChildren:[NSArray array]];
-		[self setLeaf:NO];			// container by default
+		[self setLeaf:NO];			// Container by default
 	}
 	return self;
 }
@@ -34,19 +34,19 @@
 	[super dealloc];
 }
 
-- (void)setNodeTitle:(NSString*)newNodeTitle
+- (void)setNodeTitle:(NSString *)newNodeTitle
 {
 	[newNodeTitle retain];
 	[nodeTitle release];
 	nodeTitle = newNodeTitle;
 }
 
-- (NSString*)nodeTitle
+- (NSString *)nodeTitle
 {
 	return nodeTitle;
 }
 
-- (void)setNodeIcon:(NSImage*)icon
+- (void)setNodeIcon:(NSImage *)icon
 {
     if (!nodeIcon || ![nodeIcon isEqual:icon])
 	{
@@ -55,12 +55,12 @@
     }
 }
 
-- (NSImage*)nodeIcon
+- (NSImage *)nodeIcon
 {
     return nodeIcon;
 }
 
-- (void)setChildren:(NSArray*)newChildren
+- (void)setChildren:(NSArray *)newChildren
 {
 	if (children != newChildren)
     {
@@ -69,7 +69,7 @@
     }
 }
 
-- (NSMutableArray*)children
+- (NSMutableArray *)children
 {
 	return children;
 }
@@ -88,7 +88,7 @@
 	return isLeaf;
 }
 
-- (void)setURL:(NSString*)urlStr
+- (void)setURL:(NSString *)urlStr
 { 
     if (!urlString || ![urlString isEqualToString:urlStr])
 	{
@@ -97,12 +97,12 @@
     }
 }
 
-- (NSString*)urlString
+- (NSString *)urlString
 { 
     return urlString; 
 }
 
-- (NSComparisonResult)compare:(BaseNode*)aNode
+- (NSComparisonResult)compare:(BaseNode *)aNode
 {
 	return [[[self nodeTitle] lowercaseString] compare:[[aNode nodeTitle] lowercaseString]];
 }
@@ -114,14 +114,14 @@
 {
 	BOOL result = YES;
 	if ([[self urlString] isAbsolutePath] || [self nodeIcon] == nil)
-		result = NO;	// don't allow file system objects to be dragged or special group nodes
+		result = NO;	// Don't allow file system objects to be dragged or special group nodes
 	return result;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Finds the receiver's parent from the nodes contained in the array.
-// -------------------------------------------------------------------------------
-- (id)parentFromArray:(NSArray*)array
+// --------------------------------------------------------------------
+- (id)parentFromArray:(NSArray *)array
 {
 	id result = nil;
 	
@@ -150,10 +150,10 @@
 	return result;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Recursive method which searches children and children of all sub-nodes
 //	to remove the given object.
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 - (void)removeObjectFromChildren:(id)obj
 {
 	// Remove object from children or the children of any sub-nodes
@@ -173,14 +173,14 @@
 	}
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Generates an array of all descendants.
-// -------------------------------------------------------------------------------
-- (NSArray*)descendants
+// --------------------------------------------------------------------
+- (NSArray *)descendants
 {
-	NSMutableArray	*descendants = [NSMutableArray array];
-	NSEnumerator	*enumerator = [children objectEnumerator];
-	id				node = nil;
+	NSMutableArray *descendants = [NSMutableArray array];
+	NSEnumerator *enumerator = [children objectEnumerator];
+	id node = nil;
 	
 	while ((node = [enumerator nextObject]))
 	{
@@ -192,15 +192,15 @@
 	return descendants;
 }
 
-// -------------------------------------------------------------------------------
-//	Generates an array of all leafs in children and children of all sub-nodes.
-//	Useful for generating a list of leaf-only nodes.
-// -------------------------------------------------------------------------------
-- (NSArray*)allChildLeafs
+// --------------------------------------------------------------------
+//	Generates an array of all leafs in children and children of all 
+//	sub-nodes. Useful for generating a list of leaf-only nodes.
+// --------------------------------------------------------------------
+- (NSArray *)allChildLeafs
 {
-	NSMutableArray	*childLeafs = [NSMutableArray array];
-	NSEnumerator	*enumerator = [children objectEnumerator];
-	id				node = nil;
+	NSMutableArray *childLeafs = [NSMutableArray array];
+	NSEnumerator *enumerator = [children objectEnumerator];
+	id node = nil;
 	
 	while ((node = [enumerator nextObject]))
 	{
@@ -212,14 +212,14 @@
 	return childLeafs;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Returns only the children that are group nodes.
-// -------------------------------------------------------------------------------
-- (NSArray*)groupChildren
+// --------------------------------------------------------------------
+- (NSArray *)groupChildren
 {
-	NSMutableArray	*groupChildren = [NSMutableArray array];
-	NSEnumerator	*childEnumerator = [children objectEnumerator];
-	BaseNode		*child;
+	NSMutableArray *groupChildren = [NSMutableArray array];
+	NSEnumerator *childEnumerator = [children objectEnumerator];
+	BaseNode *child;
 	
 	while ((child = [childEnumerator nextObject]))
 	{
@@ -229,13 +229,13 @@
 	return groupChildren;
 }
 
-// -------------------------------------------------------------------------------
-//	Returns YES if self is contained anywhere inside the children or children of
-//	sub-nodes of the nodes contained inside the given array.
-// -------------------------------------------------------------------------------
-- (BOOL)isDescendantOfOrOneOfNodes:(NSArray*)nodes
+// --------------------------------------------------------------------
+//	Returns YES if self is contained anywhere inside the children or
+//	children of sub-nodes of the nodes contained inside the given array.
+// --------------------------------------------------------------------
+- (BOOL)isDescendantOfOrOneOfNodes:(NSArray *)nodes
 {
-    // returns YES if we are contained anywhere inside the array passed in, including inside sub-nodes
+    // Returns YES if we are contained anywhere inside the array passed in, including inside sub-nodes
     NSEnumerator *enumerator = [nodes objectEnumerator];
 	id node = nil;
 	
@@ -255,17 +255,17 @@
     return NO;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Returns YES if any node in the array passed in is an ancestor of ours.
-// -------------------------------------------------------------------------------
-- (BOOL)isDescendantOfNodes:(NSArray*)nodes
+// --------------------------------------------------------------------
+- (BOOL)isDescendantOfNodes:(NSArray *)nodes
 {
     NSEnumerator *enumerator = [nodes objectEnumerator];
 	id node = nil;
 	
     while ((node = [enumerator nextObject]))
 	{
-		// check all the sub-nodes
+		// Check all the sub-nodes
 		if (![node isLeaf])
 		{
 			if ([self isDescendantOfOrOneOfNodes:[node children]])
@@ -276,16 +276,16 @@
 	return NO;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Returns the index path of within the given array,
 //	useful for drag and drop.
-// -------------------------------------------------------------------------------
-- (NSIndexPath*)indexPathInArray:(NSArray*)array
+// --------------------------------------------------------------------
+- (NSIndexPath *)indexPathInArray:(NSArray *)array
 {
-	NSIndexPath		*indexPath = nil;
-	NSMutableArray	*reverseIndexes = [NSMutableArray array];
-	id				parent, doc = self;
-	NSInteger		index;
+	NSIndexPath *indexPath = nil;
+	NSMutableArray *reverseIndexes = [NSMutableArray array];
+	id parent, doc = self;
+	NSInteger index;
 	
 	while ((parent = [doc parentFromArray:array]))
 	{
@@ -320,10 +320,10 @@
 
 #pragma mark - Archiving And Copying Support
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Override this method to maintain support for archiving and copying.
-// -------------------------------------------------------------------------------
-- (NSArray*)mutableKeys
+// --------------------------------------------------------------------
+- (NSArray *)mutableKeys
 {
 	return [NSArray arrayWithObjects:
 		@"nodeTitle",
@@ -334,7 +334,7 @@
 		nil];
 }
 
-- (id)initWithDictionary:(NSDictionary*)dictionary
+- (id)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [self init];
 	NSEnumerator *keysToDecode = [[self mutableKeys] objectEnumerator];
@@ -365,15 +365,15 @@
 	return self;
 }
 
-- (NSDictionary*)dictionaryRepresentation
+- (NSDictionary *)dictionaryRepresentation
 {
 	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-	NSEnumerator		*keysToCode = [[self mutableKeys] objectEnumerator];
-	NSString			*key;
+	NSEnumerator *keysToCode = [[self mutableKeys] objectEnumerator];
+	NSString *key;
 	
 	while ((key = [keysToCode nextObject]))
 	{
-		// convert all children to dictionaries
+		// Convert all children to dictionaries
 		if ([key isEqualToString:@"children"])
 		{
 			if (!isLeaf)
@@ -395,7 +395,7 @@
 	return dictionary;
 }
 
-- (id)initWithCoder:(NSCoder*)coder
+- (id)initWithCoder:(NSCoder *)coder
 {		
 	self = [self init];
 	NSEnumerator *keysToDecode = [[self mutableKeys] objectEnumerator];
@@ -406,7 +406,7 @@
 	return self;
 }
 
-- (void)encodeWithCoder:(NSCoder*)coder
+- (void)encodeWithCoder:(NSCoder *)coder
 {	
 	NSEnumerator *keysToCode = [[self mutableKeys] objectEnumerator];
 	NSString *key;
@@ -414,7 +414,7 @@
 		[coder encodeObject:[self valueForKey:key] forKey:key];
 }
 
-- (id)copyWithZone:(NSZone*)zone
+- (id)copyWithZone:(NSZone *)zone
 {
 	id newNode = [[[self class] allocWithZone:zone] init];
 	
@@ -426,10 +426,10 @@
 	return newNode;
 }
 
-// -------------------------------------------------------------------------------
+// --------------------------------------------------------------------
 //	Override this for any non-object values
-// -------------------------------------------------------------------------------
-- (void)setNilValueForKey:(NSString*)key
+// --------------------------------------------------------------------
+- (void)setNilValueForKey:(NSString *)key
 {
 	if ([key isEqualToString:@"isLeaf"])
 		isLeaf = NO;
