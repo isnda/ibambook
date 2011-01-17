@@ -1,6 +1,6 @@
 //
 //  SideBarController.h
-//  Sandbox
+//  iBambook
 //
 //  Created by Neo Lee on 1/14/11.
 //  Copyright 2011 Ragnarok Studio. All rights reserved.

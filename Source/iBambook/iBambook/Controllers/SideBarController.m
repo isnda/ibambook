@@ -1,6 +1,6 @@
 //
 //  SideBarController.m
-//  Sandbox
+//  iBambook
 //
 //  Created by Neo Lee on 1/14/11.
 //  Copyright 2011 Ragnarok Studio. All rights reserved.
@@ -173,12 +173,12 @@
 	}
 	else {
 		// Get the index of the currently selected node, then add the number of its children to the path -
-		//   this will give us an index which will allow us to add a node to the end of the currently 
-        //   selected node's children array.
+		//  this will give us an index which will allow us to add a node to the end of the currently 
+        //  selected node's children array.
 		indexPath = [treeController selectionIndexPath];
 		if ([[[treeController selectedObjects] objectAtIndex:0] isLeaf]) {
 			// User is trying to add a folder on a selected child,
-			//   so deselect child and select its parent for addition
+			//  so deselect child and select its parent for addition
 			[self selectParentFromSelection];
 		}
 		else {
