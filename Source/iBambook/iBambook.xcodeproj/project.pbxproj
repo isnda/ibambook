@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50723CD12E3E4D30090BB52 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723C012E3E4D30090BB52 /* ImageAndTextCell.m */; };
-		B50723CE12E3E4D30090BB52 /* SeparatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723C212E3E4D30090BB52 /* SeparatorCell.m */; };
 		B50723CF12E3E4D30090BB52 /* SideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723C512E3E4D30090BB52 /* SideBarController.m */; };
-		B50723D012E3E4D30090BB52 /* BaseNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723C812E3E4D30090BB52 /* BaseNode.m */; };
-		B50723D112E3E4D30090BB52 /* ChildNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723CA12E3E4D30090BB52 /* ChildNode.m */; };
-		B50723D212E3E4D30090BB52 /* NSArrayExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723CC12E3E4D30090BB52 /* NSArrayExtensions.m */; };
 		B50723DB12E3ED510090BB52 /* SideBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50723DA12E3ED510090BB52 /* SideBarController.xib */; };
 		B54DB20512DF0586006E12E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DB20412DF0586006E12E8 /* Cocoa.framework */; };
 		B54DB20F12DF0586006E12E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B54DB20D12DF0586006E12E8 /* InfoPlist.strings */; };
@@ -24,21 +19,16 @@
 		B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875912E6974600FE7C02 /* BBDeviceController.xib */; };
 		B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875E12E6977100FE7C02 /* BBShelfController.m */; };
 		B5E5876112E6977100FE7C02 /* BBShelfController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875F12E6977100FE7C02 /* BBShelfController.xib */; };
+		B5E5876812E6C2A300FE7C02 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5876512E6C2A300FE7C02 /* ImageAndTextCell.m */; };
+		B5E5876912E6C2A300FE7C02 /* SeparatorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5876712E6C2A300FE7C02 /* SeparatorCell.m */; };
+		B5E5877012E6C2AF00FE7C02 /* BaseNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5876B12E6C2AF00FE7C02 /* BaseNode.m */; };
+		B5E5877112E6C2AF00FE7C02 /* ChildNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5876D12E6C2AF00FE7C02 /* ChildNode.m */; };
+		B5E5877212E6C2AF00FE7C02 /* NSArrayExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5876F12E6C2AF00FE7C02 /* NSArrayExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50723BF12E3E4D30090BB52 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
-		B50723C012E3E4D30090BB52 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
-		B50723C112E3E4D30090BB52 /* SeparatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeparatorCell.h; sourceTree = "<group>"; };
-		B50723C212E3E4D30090BB52 /* SeparatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeparatorCell.m; sourceTree = "<group>"; };
 		B50723C412E3E4D30090BB52 /* SideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarController.h; sourceTree = "<group>"; };
 		B50723C512E3E4D30090BB52 /* SideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarController.m; sourceTree = "<group>"; };
-		B50723C712E3E4D30090BB52 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNode.h; sourceTree = "<group>"; };
-		B50723C812E3E4D30090BB52 /* BaseNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNode.m; sourceTree = "<group>"; };
-		B50723C912E3E4D30090BB52 /* ChildNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildNode.h; sourceTree = "<group>"; };
-		B50723CA12E3E4D30090BB52 /* ChildNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildNode.m; sourceTree = "<group>"; };
-		B50723CB12E3E4D30090BB52 /* NSArrayExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayExtensions.h; sourceTree = "<group>"; };
-		B50723CC12E3E4D30090BB52 /* NSArrayExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensions.m; sourceTree = "<group>"; };
 		B50723DA12E3ED510090BB52 /* SideBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideBarController.xib; path = Controllers/SideBarController.xib; sourceTree = "<group>"; };
 		B54DB20012DF0586006E12E8 /* iBambook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBambook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54DB20412DF0586006E12E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -59,6 +49,16 @@
 		B5E5875D12E6977100FE7C02 /* BBShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBShelfController.h; sourceTree = "<group>"; };
 		B5E5875E12E6977100FE7C02 /* BBShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBShelfController.m; sourceTree = "<group>"; };
 		B5E5875F12E6977100FE7C02 /* BBShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBShelfController.xib; path = Controllers/BBShelfController.xib; sourceTree = "<group>"; };
+		B5E5876412E6C2A300FE7C02 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageAndTextCell.h; path = iBambook/SideBar/Cells/ImageAndTextCell.h; sourceTree = SOURCE_ROOT; };
+		B5E5876512E6C2A300FE7C02 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageAndTextCell.m; path = iBambook/SideBar/Cells/ImageAndTextCell.m; sourceTree = SOURCE_ROOT; };
+		B5E5876612E6C2A300FE7C02 /* SeparatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeparatorCell.h; path = iBambook/SideBar/Cells/SeparatorCell.h; sourceTree = SOURCE_ROOT; };
+		B5E5876712E6C2A300FE7C02 /* SeparatorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeparatorCell.m; path = iBambook/SideBar/Cells/SeparatorCell.m; sourceTree = SOURCE_ROOT; };
+		B5E5876A12E6C2AF00FE7C02 /* BaseNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseNode.h; path = iBambook/SideBar/Nodes/BaseNode.h; sourceTree = SOURCE_ROOT; };
+		B5E5876B12E6C2AF00FE7C02 /* BaseNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseNode.m; path = iBambook/SideBar/Nodes/BaseNode.m; sourceTree = SOURCE_ROOT; };
+		B5E5876C12E6C2AF00FE7C02 /* ChildNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChildNode.h; path = iBambook/SideBar/Nodes/ChildNode.h; sourceTree = SOURCE_ROOT; };
+		B5E5876D12E6C2AF00FE7C02 /* ChildNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChildNode.m; path = iBambook/SideBar/Nodes/ChildNode.m; sourceTree = SOURCE_ROOT; };
+		B5E5876E12E6C2AF00FE7C02 /* NSArrayExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSArrayExtensions.h; path = iBambook/SideBar/Nodes/NSArrayExtensions.h; sourceTree = SOURCE_ROOT; };
+		B5E5876F12E6C2AF00FE7C02 /* NSArrayExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayExtensions.m; path = iBambook/SideBar/Nodes/NSArrayExtensions.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +76,10 @@
 		B50723BE12E3E4D30090BB52 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B50723BF12E3E4D30090BB52 /* ImageAndTextCell.h */,
-				B50723C012E3E4D30090BB52 /* ImageAndTextCell.m */,
-				B50723C112E3E4D30090BB52 /* SeparatorCell.h */,
-				B50723C212E3E4D30090BB52 /* SeparatorCell.m */,
+				B5E5876412E6C2A300FE7C02 /* ImageAndTextCell.h */,
+				B5E5876512E6C2A300FE7C02 /* ImageAndTextCell.m */,
+				B5E5876612E6C2A300FE7C02 /* SeparatorCell.h */,
+				B5E5876712E6C2A300FE7C02 /* SeparatorCell.m */,
 			);
 			name = Cells;
 			path = iBambook/Cells;
@@ -99,26 +99,25 @@
 			path = iBambook/Controllers;
 			sourceTree = "<group>";
 		};
-		B50723C612E3E4D30090BB52 /* TreeNodes */ = {
+		B50723C612E3E4D30090BB52 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				B50723C712E3E4D30090BB52 /* BaseNode.h */,
-				B50723C812E3E4D30090BB52 /* BaseNode.m */,
-				B50723C912E3E4D30090BB52 /* ChildNode.h */,
-				B50723CA12E3E4D30090BB52 /* ChildNode.m */,
-				B50723CB12E3E4D30090BB52 /* NSArrayExtensions.h */,
-				B50723CC12E3E4D30090BB52 /* NSArrayExtensions.m */,
+				B5E5876A12E6C2AF00FE7C02 /* BaseNode.h */,
+				B5E5876B12E6C2AF00FE7C02 /* BaseNode.m */,
+				B5E5876C12E6C2AF00FE7C02 /* ChildNode.h */,
+				B5E5876D12E6C2AF00FE7C02 /* ChildNode.m */,
+				B5E5876E12E6C2AF00FE7C02 /* NSArrayExtensions.h */,
+				B5E5876F12E6C2AF00FE7C02 /* NSArrayExtensions.m */,
 			);
-			name = TreeNodes;
+			name = Nodes;
 			path = iBambook/TreeNodes;
 			sourceTree = "<group>";
 		};
 		B54DB1F512DF0586006E12E8 = {
 			isa = PBXGroup;
 			children = (
-				B50723BE12E3E4D30090BB52 /* Cells */,
+				B5E5876312E6C24200FE7C02 /* SideBar */,
 				B50723C312E3E4D30090BB52 /* Controllers */,
-				B50723C612E3E4D30090BB52 /* TreeNodes */,
 				B54DB20A12DF0586006E12E8 /* iBambook */,
 				B54DB20312DF0586006E12E8 /* Frameworks */,
 				B54DB20112DF0586006E12E8 /* Products */,
@@ -176,6 +175,15 @@
 				B54DB21312DF0586006E12E8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5E5876312E6C24200FE7C02 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				B50723C612E3E4D30090BB52 /* Nodes */,
+				B50723BE12E3E4D30090BB52 /* Cells */,
+			);
+			name = SideBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,14 +251,14 @@
 			files = (
 				B54DB21212DF0586006E12E8 /* main.m in Sources */,
 				B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */,
-				B50723CD12E3E4D30090BB52 /* ImageAndTextCell.m in Sources */,
-				B50723CE12E3E4D30090BB52 /* SeparatorCell.m in Sources */,
 				B50723CF12E3E4D30090BB52 /* SideBarController.m in Sources */,
-				B50723D012E3E4D30090BB52 /* BaseNode.m in Sources */,
-				B50723D112E3E4D30090BB52 /* ChildNode.m in Sources */,
-				B50723D212E3E4D30090BB52 /* NSArrayExtensions.m in Sources */,
 				B5E5875A12E6974600FE7C02 /* BBDeviceController.m in Sources */,
 				B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */,
+				B5E5876812E6C2A300FE7C02 /* ImageAndTextCell.m in Sources */,
+				B5E5876912E6C2A300FE7C02 /* SeparatorCell.m in Sources */,
+				B5E5877012E6C2AF00FE7C02 /* BaseNode.m in Sources */,
+				B5E5877112E6C2AF00FE7C02 /* ChildNode.m in Sources */,
+				B5E5877212E6C2AF00FE7C02 /* NSArrayExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

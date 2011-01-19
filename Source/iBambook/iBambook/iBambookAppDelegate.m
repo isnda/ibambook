@@ -83,8 +83,18 @@
 
 - (void)changeContentView:(NSString *)urlString
 {
-    // TODO: Load corresponding content view via selected item's URL
+    // TODO: Remove the following line after completing the protocol related code
     NSLog(@"Enter changeContentView with URL=%@", urlString);
+
+    // If nil URL is sent in, just remove current content view and return
+    if (!urlString) {
+        [self removeContentView];
+        currentContentView = nil;
+        return;
+    }
+    
+    // TODO: Load corresponding content view via selected item's URL
+    
 }
 
 
