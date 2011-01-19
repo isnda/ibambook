@@ -20,6 +20,10 @@
 		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
+		B5E5875A12E6974600FE7C02 /* BBDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875812E6974600FE7C02 /* BBDeviceController.m */; };
+		B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875912E6974600FE7C02 /* BBDeviceController.xib */; };
+		B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875E12E6977100FE7C02 /* BBShelfController.m */; };
+		B5E5876112E6977100FE7C02 /* BBShelfController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875F12E6977100FE7C02 /* BBShelfController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,12 @@
 		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBambookAppDelegate.h; sourceTree = "<group>"; };
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBambookAppDelegate.m; sourceTree = "<group>"; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B5E5875712E6974600FE7C02 /* BBDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceController.h; sourceTree = "<group>"; };
+		B5E5875812E6974600FE7C02 /* BBDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceController.m; sourceTree = "<group>"; };
+		B5E5875912E6974600FE7C02 /* BBDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBDeviceController.xib; path = Controllers/BBDeviceController.xib; sourceTree = "<group>"; };
+		B5E5875D12E6977100FE7C02 /* BBShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBShelfController.h; sourceTree = "<group>"; };
+		B5E5875E12E6977100FE7C02 /* BBShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBShelfController.m; sourceTree = "<group>"; };
+		B5E5875F12E6977100FE7C02 /* BBShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBShelfController.xib; path = Controllers/BBShelfController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,10 @@
 			children = (
 				B50723C412E3E4D30090BB52 /* SideBarController.h */,
 				B50723C512E3E4D30090BB52 /* SideBarController.m */,
+				B5E5875D12E6977100FE7C02 /* BBShelfController.h */,
+				B5E5875E12E6977100FE7C02 /* BBShelfController.m */,
+				B5E5875712E6974600FE7C02 /* BBDeviceController.h */,
+				B5E5875812E6974600FE7C02 /* BBDeviceController.m */,
 			);
 			name = Controllers;
 			path = iBambook/Controllers;
@@ -144,6 +158,8 @@
 				B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */,
 				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
 				B50723DA12E3ED510090BB52 /* SideBarController.xib */,
+				B5E5875F12E6977100FE7C02 /* BBShelfController.xib */,
+				B5E5875912E6974600FE7C02 /* BBDeviceController.xib */,
 				B54DB21912DF0586006E12E8 /* MainMenu.xib */,
 				B54DB20B12DF0586006E12E8 /* Supporting Files */,
 			);
@@ -213,6 +229,8 @@
 				B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */,
 				B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */,
 				B50723DB12E3ED510090BB52 /* SideBarController.xib in Resources */,
+				B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */,
+				B5E5876112E6977100FE7C02 /* BBShelfController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +249,8 @@
 				B50723D012E3E4D30090BB52 /* BaseNode.m in Sources */,
 				B50723D112E3E4D30090BB52 /* ChildNode.m in Sources */,
 				B50723D212E3E4D30090BB52 /* NSArrayExtensions.m in Sources */,
+				B5E5875A12E6974600FE7C02 /* BBDeviceController.m in Sources */,
+				B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

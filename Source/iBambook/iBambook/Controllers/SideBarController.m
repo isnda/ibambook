@@ -14,7 +14,7 @@
 
 #define COLUMNID_NAME		@"COLUMN_MAIN"
 
-#define RESOURCE_NAME       @"RESOURCE"
+#define LIBRARY_NAME        @"LIBRARY"
 #define DEVICES_NAME        @"DEVICES"
 #define ACCOUNTS_NAME       @"ACCOUNTS"
 
@@ -199,16 +199,21 @@
 	
 	ChildNode *node = [[ChildNode alloc] init];
 	[node setNodeTitle:[treeAddition nodeName]];
+	[node setURL:[treeAddition nodeURL]];
 	
-	// the user is adding a child node, tell the controller directly
+	// The user is adding a child node, tell the controller directly
 	[treeController insertObject:node atArrangedObjectIndexPath:indexPath];
 	
 	[node release];
+    
+	// Adding a child automatically becomes selected by NSOutlineView, so keep its parent selected if required
+    if ([treeAddition selectItsParent])
+		[self selectParentFromSelection];
 }
 
-- (void)addFolder:(NSString *)folderName
+- (void)addFolder:(NSString *)folderName withURL:(NSString *)url selectParent:(BOOL)select
 {
-	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:nil withName:folderName selectItsParent:NO];
+	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:url withName:folderName selectItsParent:select];
 	
 	if (duringStartUp) {
 		[self performSelectorOnMainThread:@selector(performAddFolder:) withObject:treeObjInfo waitUntilDone:YES];
@@ -218,6 +223,11 @@
 	}
     
 	[treeObjInfo release];
+}
+
+- (void)addFolder:(NSString *)folderName
+{
+    [self addFolder:folderName withURL:nil selectParent:NO];
 }
 
 - (void)performAddChild:(TreeAdditionObj *)treeAddition
@@ -254,19 +264,19 @@
 		}
 	}
 	
-	// the user is adding a child node, tell the controller directly
+	// The user is adding a child node, tell the controller directly
 	[treeController insertObject:node atArrangedObjectIndexPath:indexPath];
     
 	[node release];
 	
-	// adding a child automatically becomes selected by NSOutlineView, so keep its parent selected
+	// Adding a child automatically becomes selected by NSOutlineView, so keep its parent selected if required
 	if ([treeAddition selectItsParent])
 		[self selectParentFromSelection];
 }
 
-- (void)addChild:(NSString *)url withName:(NSString *)nameStr selectParent:(BOOL)select
+- (void)addChild:(NSString *)nodeName withURL:(NSString *)url selectParent:(BOOL)select
 {
-	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:url withName:nameStr selectItsParent:select];
+	TreeAdditionObj *treeObjInfo = [[TreeAdditionObj alloc] initWithURL:url withName:nodeName selectItsParent:select];
 	
 	if (duringStartUp) {
 		[self performSelectorOnMainThread:@selector(performAddChild:) withObject:treeObjInfo waitUntilDone:YES];
@@ -278,15 +288,13 @@
 	[treeObjInfo release];
 }
 
-- (void)addResourceSection {
-	[self addFolder:RESOURCE_NAME];
+- (void)addLibrarySection {
+	[self addFolder:LIBRARY_NAME];
 	
-	// Add all resource
+	// Add all local library resource
     // TODO: These child nodes are just for demo
-	[self addChild:NSHomeDirectory() withName:nil selectParent:YES];	
-	[self addChild:[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"] withName:nil selectParent:YES];	
-	[self addChild:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] withName:nil selectParent:YES];	
-	[self addChild:@"/Applications" withName:nil selectParent:YES];
+    [self addChild:@"Books" withURL:@"shelf://local" selectParent:YES];
+    [self addChild:@"Apps" withURL:@"apps://local" selectParent:YES];
     
 	[self selectParentFromSelection];
 }
@@ -296,12 +304,12 @@
     
 	// Add all connected devices
     // TODO: These child nodes are just for demo
-	NSArray *mountedVols = [[NSWorkspace sharedWorkspace] mountedLocalVolumePaths]; 
-	if ([mountedVols count] > 0) {
-		for (NSString *element in mountedVols)
-			[self addChild:element withName:nil selectParent:YES];
-	}
-    
+    [self addFolder:@"Neo's Bambook" withURL:@"device://banbook/0001" selectParent:NO];
+    [self addChild:@"Books" withURL:@"shelf://bambook/0001" selectParent:YES];
+    [self addChild:@"Apps" withURL:@"apps://bambook/0001" selectParent:YES];
+	[self selectParentFromSelection];
+    // TODO: Here we can add other devices
+
 	[self selectParentFromSelection];
 }
 
@@ -310,7 +318,7 @@
     
 	// Add all managed accounts
     // TODO: These child nodes are just for demo
-    [self addChild:@"neo" withName:@"Neo Lee" selectParent:NO];
+    [self addChild:@"Neo Lee" withURL:@"user://neo" selectParent:NO];
     
     [self selectParentFromSelection];
 }
@@ -323,7 +331,7 @@
     
 	[sideBarView setHidden:YES];
 	
-	[self addResourceSection];
+	[self addLibrarySection];
 	[self addDevicesSection];
 	[self addAccountsSection];
 	
@@ -349,7 +357,7 @@
     // Using node title to determine the topest level(i.e. special) folder
     // TODO: Should be more general
 	return ([groupNode nodeIcon] == nil &&
-			[[groupNode nodeTitle] isEqualToString:RESOURCE_NAME] || 
+			[[groupNode nodeTitle] isEqualToString:LIBRARY_NAME] || 
             [[groupNode nodeTitle] isEqualToString:DEVICES_NAME] || 
             [[groupNode nodeTitle] isEqualToString:ACCOUNTS_NAME]);
 }
