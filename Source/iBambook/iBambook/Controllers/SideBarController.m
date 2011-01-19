@@ -93,6 +93,8 @@
 }
 
 
+#pragma mark - SideBarController Lifecycle
+
 // --------------------------------------------------------------------
 //	SideBarController Lifecycle
 // --------------------------------------------------------------------
@@ -151,6 +153,8 @@
 	[sideBarView setSelectionHighlightStyle:NSTableViewSelectionHighlightStyleSourceList];
 }
 
+
+#pragma mark - Side Bar Population
 
 // --------------------------------------------------------------------
 // Side bar population and all helper methods
@@ -255,6 +259,7 @@
 			if ([treeAddition nodeName])
 				[node setNodeTitle:[treeAddition nodeName]];
 			else
+                // TODO: All nodes with URL but without name, should go through the protocol analysis
 				[node setNodeTitle:[[NSFileManager defaultManager] displayNameAtPath:[node urlString]]];
 		}
 		else {
