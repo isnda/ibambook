@@ -980,7 +980,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="66245107">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">1212158208</int>
-								<string key="NSContents">All books on huoju's Bambook are synchronized.</string>
+								<string key="NSContents">All books are synchronized.</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">10</double>
@@ -1112,7 +1112,6 @@
 							<string key="NSFrame">{{25, 0}, {749, 14}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="71520367">
 								<int key="NSCellFlags">68288064</int>

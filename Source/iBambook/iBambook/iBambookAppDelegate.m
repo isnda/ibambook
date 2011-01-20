@@ -8,10 +8,14 @@
 
 #import "iBambookAppDelegate.h"
 #import "BBURL.h"
-#import "BBContentController.h"
 #import "SideBarController.h"
+#import "BBContentController.h"
 #import "BBShelfController.h"
+#import "BBAppsController.h"
 #import "BBDeviceController.h"
+#import "BBDeviceShelfController.h"
+#import "BBDeviceAppsController.h"
+#import "BBUserController.h"
 
 
 #define kMinSideBarWidth 200.0f
@@ -105,12 +109,18 @@
         if ([bburl isDeviceLocal]) {
             newContentController = [[BBShelfController alloc] initWithNibName:@"BBShelfController" bundle:nil];
         } else {
-            
+            newContentController = [[BBDeviceShelfController alloc] initWithNibName:@"BBDeviceShelfController" bundle:nil];
         }
     } else if ([bburl isApps]) {
-        
+        if ([bburl isDeviceLocal]) {
+            newContentController = [[BBAppsController alloc] initWithNibName:@"BBAppsController" bundle:nil];
+        } else {
+            newContentController = [[BBDeviceAppsController alloc] initWithNibName:@"BBDeviceAppsController" bundle:nil];
+        }
     } else if ([bburl isDevice]) {
         newContentController = [[BBDeviceController alloc] initWithNibName:@"BBDeviceController" bundle:nil];
+    } else if ([bburl isUser]) {
+        newContentController = [[BBUserController alloc] initWithNibName:@"BBUserController" bundle:nil];
     }
 
     if (newContentController) {
@@ -122,7 +132,7 @@
         
         // Switch to new subview
         [self removeContentView];
-        currentContentView = nil;
+        
         [containerView addSubview:newContentView];
         currentContentView = newContentView;
         

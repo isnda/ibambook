@@ -10,6 +10,10 @@
 		B50723CF12E3E4D30090BB52 /* SideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50723C512E3E4D30090BB52 /* SideBarController.m */; };
 		B50723DB12E3ED510090BB52 /* SideBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50723DA12E3ED510090BB52 /* SideBarController.xib */; };
 		B50D061B12E874F9006F2DA8 /* BBContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50D061912E874F9006F2DA8 /* BBContentController.m */; };
+		B50D062012E87B43006F2DA8 /* BBAppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50D061E12E87B43006F2DA8 /* BBAppsController.m */; };
+		B50D062112E87B43006F2DA8 /* BBAppsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D061F12E87B43006F2DA8 /* BBAppsController.xib */; };
+		B50D062512E87C0B006F2DA8 /* BBDeviceShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50D062312E87C0B006F2DA8 /* BBDeviceShelfController.m */; };
+		B50D062612E87C0B006F2DA8 /* BBDeviceShelfController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D062412E87C0B006F2DA8 /* BBDeviceShelfController.xib */; };
 		B54DB20512DF0586006E12E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DB20412DF0586006E12E8 /* Cocoa.framework */; };
 		B54DB20F12DF0586006E12E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B54DB20D12DF0586006E12E8 /* InfoPlist.strings */; };
 		B54DB21212DF0586006E12E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21112DF0586006E12E8 /* main.m */; };
@@ -17,6 +21,10 @@
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
 		B5B8AB8312E811A400E50496 /* BBURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B8AB8212E811A400E50496 /* BBURL.m */; };
+		B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */; };
+		B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */; };
+		B5C42CAB12E87CAF00FA4CA0 /* BBUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA912E87CAF00FA4CA0 /* BBUserController.m */; };
+		B5C42CAC12E87CAF00FA4CA0 /* BBUserController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C42CAA12E87CAF00FA4CA0 /* BBUserController.xib */; };
 		B5E5875A12E6974600FE7C02 /* BBDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875812E6974600FE7C02 /* BBDeviceController.m */; };
 		B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875912E6974600FE7C02 /* BBDeviceController.xib */; };
 		B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875E12E6977100FE7C02 /* BBShelfController.m */; };
@@ -34,6 +42,12 @@
 		B50723DA12E3ED510090BB52 /* SideBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarController.xib; sourceTree = "<group>"; };
 		B50D061812E874F9006F2DA8 /* BBContentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBContentController.h; sourceTree = "<group>"; };
 		B50D061912E874F9006F2DA8 /* BBContentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBContentController.m; sourceTree = "<group>"; };
+		B50D061D12E87B43006F2DA8 /* BBAppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAppsController.h; sourceTree = "<group>"; };
+		B50D061E12E87B43006F2DA8 /* BBAppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAppsController.m; sourceTree = "<group>"; };
+		B50D061F12E87B43006F2DA8 /* BBAppsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBAppsController.xib; sourceTree = "<group>"; };
+		B50D062212E87C0B006F2DA8 /* BBDeviceShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceShelfController.h; sourceTree = "<group>"; };
+		B50D062312E87C0B006F2DA8 /* BBDeviceShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceShelfController.m; sourceTree = "<group>"; };
+		B50D062412E87C0B006F2DA8 /* BBDeviceShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceShelfController.xib; sourceTree = "<group>"; };
 		B54DB20012DF0586006E12E8 /* iBambook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBambook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54DB20412DF0586006E12E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B54DB20712DF0586006E12E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,6 +63,12 @@
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B5B8AB8112E811A400E50496 /* BBURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BBURL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B5B8AB8212E811A400E50496 /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBURL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B5C42CA312E87C7B00FA4CA0 /* BBDeviceAppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceAppsController.h; sourceTree = "<group>"; };
+		B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceAppsController.m; sourceTree = "<group>"; };
+		B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceAppsController.xib; sourceTree = "<group>"; };
+		B5C42CA812E87CAF00FA4CA0 /* BBUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUserController.h; sourceTree = "<group>"; };
+		B5C42CA912E87CAF00FA4CA0 /* BBUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBUserController.m; sourceTree = "<group>"; };
+		B5C42CAA12E87CAF00FA4CA0 /* BBUserController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBUserController.xib; sourceTree = "<group>"; };
 		B5E5875712E6974600FE7C02 /* BBDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceController.h; sourceTree = "<group>"; };
 		B5E5875812E6974600FE7C02 /* BBDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBDeviceController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B5E5875912E6974600FE7C02 /* BBDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceController.xib; sourceTree = "<group>"; };
@@ -102,9 +122,21 @@
 				B5E5875D12E6977100FE7C02 /* BBShelfController.h */,
 				B5E5875E12E6977100FE7C02 /* BBShelfController.m */,
 				B5E5875F12E6977100FE7C02 /* BBShelfController.xib */,
+				B50D061D12E87B43006F2DA8 /* BBAppsController.h */,
+				B50D061E12E87B43006F2DA8 /* BBAppsController.m */,
+				B50D061F12E87B43006F2DA8 /* BBAppsController.xib */,
 				B5E5875712E6974600FE7C02 /* BBDeviceController.h */,
 				B5E5875812E6974600FE7C02 /* BBDeviceController.m */,
 				B5E5875912E6974600FE7C02 /* BBDeviceController.xib */,
+				B50D062212E87C0B006F2DA8 /* BBDeviceShelfController.h */,
+				B50D062312E87C0B006F2DA8 /* BBDeviceShelfController.m */,
+				B50D062412E87C0B006F2DA8 /* BBDeviceShelfController.xib */,
+				B5C42CA312E87C7B00FA4CA0 /* BBDeviceAppsController.h */,
+				B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */,
+				B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */,
+				B5C42CA812E87CAF00FA4CA0 /* BBUserController.h */,
+				B5C42CA912E87CAF00FA4CA0 /* BBUserController.m */,
+				B5C42CAA12E87CAF00FA4CA0 /* BBUserController.xib */,
 			);
 			name = Controllers;
 			path = iBambook/Controllers;
@@ -252,6 +284,10 @@
 				B50723DB12E3ED510090BB52 /* SideBarController.xib in Resources */,
 				B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */,
 				B5E5876112E6977100FE7C02 /* BBShelfController.xib in Resources */,
+				B50D062112E87B43006F2DA8 /* BBAppsController.xib in Resources */,
+				B50D062612E87C0B006F2DA8 /* BBDeviceShelfController.xib in Resources */,
+				B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */,
+				B5C42CAC12E87CAF00FA4CA0 /* BBUserController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +310,10 @@
 				B5E5877212E6C2AF00FE7C02 /* NSArrayExtensions.m in Sources */,
 				B5B8AB8312E811A400E50496 /* BBURL.m in Sources */,
 				B50D061B12E874F9006F2DA8 /* BBContentController.m in Sources */,
+				B50D062012E87B43006F2DA8 /* BBAppsController.m in Sources */,
+				B50D062512E87C0B006F2DA8 /* BBDeviceShelfController.m in Sources */,
+				B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */,
+				B5C42CAB12E87CAF00FA4CA0 /* BBUserController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
