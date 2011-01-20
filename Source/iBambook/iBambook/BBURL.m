@@ -6,17 +6,23 @@
 //  Copyright 2011 Shanda Innovations. All rights reserved.
 //
 
-#import "BBURLParser.h"
+#import "BBURL.h"
 
 
-@implementation BBURLParser
+@implementation BBURL
 
-- (id)init {
+- (id)initWithURL:(NSString *)url
+{
     if ((self = [super init])) {
         // Initialization code here.
     }
     
     return self;
+}
+
+
+- (id)init {
+    return [self initWithURL:nil];
 }
 
 - (void)dealloc {
