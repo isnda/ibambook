@@ -67,6 +67,9 @@
         } else if ([urlString hasPrefix:USER_PREFIX]) {
             urlProtocol = BB_USER;
             contentString = [urlString substringFromIndex:[USER_PREFIX length]];
+        } else {
+            urlProtocol = BB_UNKNOWN;
+            contentString = urlString;
         }
         
         NSArray *contentItems = [contentString componentsSeparatedByString:SEPARATOR];
