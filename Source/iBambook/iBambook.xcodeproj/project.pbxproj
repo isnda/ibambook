@@ -15,6 +15,7 @@
 		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
+		B5B8AB8312E811A400E50496 /* BBURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B8AB8212E811A400E50496 /* BBURLParser.m */; };
 		B5E5875A12E6974600FE7C02 /* BBDeviceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875812E6974600FE7C02 /* BBDeviceController.m */; };
 		B5E5875B12E6974600FE7C02 /* BBDeviceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5E5875912E6974600FE7C02 /* BBDeviceController.xib */; };
 		B5E5876012E6977100FE7C02 /* BBShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E5875E12E6977100FE7C02 /* BBShelfController.m */; };
@@ -43,6 +44,8 @@
 		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBambookAppDelegate.h; sourceTree = "<group>"; };
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBambookAppDelegate.m; sourceTree = "<group>"; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B5B8AB8112E811A400E50496 /* BBURLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBURLParser.h; sourceTree = "<group>"; };
+		B5B8AB8212E811A400E50496 /* BBURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBURLParser.m; sourceTree = "<group>"; };
 		B5E5875712E6974600FE7C02 /* BBDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceController.h; sourceTree = "<group>"; };
 		B5E5875812E6974600FE7C02 /* BBDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceController.m; sourceTree = "<group>"; };
 		B5E5875912E6974600FE7C02 /* BBDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBDeviceController.xib; path = Controllers/BBDeviceController.xib; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 			children = (
 				B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */,
 				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
+				B5B8AB8112E811A400E50496 /* BBURLParser.h */,
+				B5B8AB8212E811A400E50496 /* BBURLParser.m */,
 				B50723DA12E3ED510090BB52 /* SideBarController.xib */,
 				B5E5875F12E6977100FE7C02 /* BBShelfController.xib */,
 				B5E5875912E6974600FE7C02 /* BBDeviceController.xib */,
@@ -211,6 +216,9 @@
 /* Begin PBXProject section */
 		B54DB1F712DF0586006E12E8 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "SNDA Innovations";
+			};
 			buildConfigurationList = B54DB1FA12DF0586006E12E8 /* Build configuration list for PBXProject "iBambook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -259,6 +267,7 @@
 				B5E5877012E6C2AF00FE7C02 /* BaseNode.m in Sources */,
 				B5E5877112E6C2AF00FE7C02 /* ChildNode.m in Sources */,
 				B5E5877212E6C2AF00FE7C02 /* NSArrayExtensions.m in Sources */,
+				B5B8AB8312E811A400E50496 /* BBURLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

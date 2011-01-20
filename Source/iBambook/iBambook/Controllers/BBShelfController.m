@@ -3,7 +3,7 @@
 //  iBambook
 //
 //  Created by Neo Lee on 1/19/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Shanda Innovations. All rights reserved.
 //
 
 #import "BBShelfController.h"
