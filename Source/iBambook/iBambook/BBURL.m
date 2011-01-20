@@ -92,7 +92,9 @@
 }
 
 - (void)dealloc {
-    // Clean-up code here.
+    [urlString release];
+    [deviceID release];
+    [resourceID release];
     
     [super dealloc];
 }

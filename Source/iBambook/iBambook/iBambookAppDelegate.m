@@ -8,6 +8,7 @@
 
 #import "iBambookAppDelegate.h"
 #import "BBURL.h"
+#import "BBContentController.h"
 #import "SideBarController.h"
 #import "BBShelfController.h"
 #import "BBDeviceController.h"
@@ -99,28 +100,26 @@
     // TODO: Load corresponding content view via selected item's URL
     BBURL *bburl = [[BBURL alloc] initWithBBURL:urlString];
     
-    NSView *newContentView = nil;
+    BBContentController *newContentController = nil;
     if ([bburl isShelf]) {
         if ([bburl isDeviceLocal]) {
-            BBShelfController *shelfController = [[BBShelfController alloc] 
-                                                  initWithNibName:@"BBShelfController" bundle:nil];
-            // TODO: Set controller properties
-
-            newContentView = [shelfController view];
+            newContentController = [[BBShelfController alloc] initWithNibName:@"BBShelfController" bundle:nil];
         } else {
             
         }
     } else if ([bburl isApps]) {
         
     } else if ([bburl isDevice]) {
-        BBDeviceController *deviceController = [[BBDeviceController alloc] 
-                                                initWithNibName:@"BBDeviceController" bundle:nil];
-        // TODO: Set controller properties
-        
-        newContentView = [deviceController view];
+        newContentController = [[BBDeviceController alloc] initWithNibName:@"BBDeviceController" bundle:nil];
     }
 
-    if (newContentView) {
+    if (newContentController) {
+        // Set controller properties
+        [newContentController setBbURL:bburl];
+        [newContentController setAppDelegate:self];
+        
+        NSView *newContentView = [newContentController view];
+        
         // Switch to new subview
         [self removeContentView];
         currentContentView = nil;

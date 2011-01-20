@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "BBContentController.h"
 
 
-@interface BBShelfController : NSViewController {
+@interface BBShelfController : BBContentController {
 @private
     
 }
