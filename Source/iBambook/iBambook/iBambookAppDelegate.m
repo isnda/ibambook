@@ -83,8 +83,8 @@
 
 - (void)changeContentView:(NSString *)urlString
 {
-    // TODO: Remove the following line after completing the protocol related code
-    NSLog(@"Enter changeContentView with URL=%@", urlString);
+    // DEBUG: Use the following line to verify BBURL url generating
+//    NSLog(@"Enter changeContentView with URL=%@", urlString);
 
     // If nil URL is sent in, just remove current content view and return
     if (!urlString) {

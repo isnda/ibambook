@@ -16,6 +16,7 @@
 #define APPS_PREFIX     @"apps://"
 #define BOOK_PREFIX     @"book://"
 #define APP_PREFIX      @"app://"
+#define USER_PREFIX     @"user://"
 
 #define DEVICE_LOCAL    @"local"
 
@@ -24,11 +25,11 @@
 
 @implementation BBURL
 
-@synthesize urlProtocol, urlString, deviceString, resourceString;
+@synthesize urlProtocol, urlString, deviceID, resourceID;
 
 #pragma mark BBURL Lifecycle
 
-- (id)initWithURL:(NSString *)url
+- (id)initWithBBURL:(NSString *)url
 {
     // Input should not be nil or empty, or we just return nil
     if (!url || ([url length] < 1))
@@ -36,8 +37,9 @@
         
     if ((self = [super init])) {
         urlString = url;
-        deviceString = @"";
-        resourceString = @"";
+        deviceID = @"";
+        resourceID = @"";
+        urlProtocol = BB_UNKNOWN;
         
         NSString *contentString = nil;
         
@@ -62,6 +64,9 @@
         } else if ([urlString hasPrefix:APP_PREFIX]) {
             urlProtocol = BB_APP;
             contentString = [urlString substringFromIndex:[APP_PREFIX length]];
+        } else if ([urlString hasPrefix:USER_PREFIX]) {
+            urlProtocol = BB_USER;
+            contentString = [urlString substringFromIndex:[USER_PREFIX length]];
         }
         
         NSArray *contentItems = [contentString componentsSeparatedByString:SEPARATOR];
@@ -69,12 +74,12 @@
         int contentItemsCount = [contentItems count];
         if (contentItemsCount == 0) {
             // If no device ID provided, use local instead
-            deviceString = DEVICE_LOCAL;
+            deviceID = DEVICE_LOCAL;
         } else {
-            deviceString = [contentItems objectAtIndex:0];
+            deviceID = [contentItems objectAtIndex:0];
             
             if (contentItemsCount > 1)
-                resourceString = [contentItems objectAtIndex:1];
+                resourceID = [contentItems objectAtIndex:1];
         }
     }
     
@@ -83,7 +88,7 @@
 
 
 - (id)init {
-    return [self initWithURL:nil];
+    return [self initWithBBURL:nil];
 }
 
 - (void)dealloc {
@@ -130,6 +135,11 @@
     return (urlProtocol == BB_APP);
 }
 
+- (BOOL)isUser
+{
+    return (urlProtocol == BB_USER);
+}
+
 
 #pragma mark BBURL makeURL Class Methods
 
@@ -145,16 +155,28 @@
     switch (protocol) {
         case BB_FILE:
             protocolString = FILE_PREFIX;
+            break;
         case BB_HTTP:
             protocolString = HTTP_PREFIX;
+            break;
+        case BB_DEVICE:
+            protocolString = DEVICE_PREFIX;
+            break;
         case BB_SHELF:
             protocolString = SHELF_PREFIX;
+            break;
         case BB_APPS:
             protocolString = APPS_PREFIX;
+            break;
         case BB_BOOK:
             protocolString = BOOK_PREFIX;
+            break;
         case BB_APP:
             protocolString = APP_PREFIX;
+            break;
+        case BB_USER:
+            protocolString = USER_PREFIX;
+            break;
         default:
             protocolString = SEPARATOR;
     }
@@ -211,5 +233,11 @@
 {
     return [BBURL makeAppURLWithDevice:DEVICE_LOCAL app:appID];
 }
+
++ (NSString *)makeUserURL:(NSString *)userID
+{
+    return [BBURL makeURLWithProtocol:BB_USER device:userID resource:nil];
+}
+
 
 @end

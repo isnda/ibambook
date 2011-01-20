@@ -17,7 +17,8 @@ enum BBURLProtocolEnum {
     BB_SHELF, 
     BB_APPS, 
     BB_BOOK,
-    BB_APP
+    BB_APP,
+    BB_USER
 };
 
 typedef enum BBURLProtocolEnum BBURLProtocol;
@@ -26,19 +27,17 @@ typedef enum BBURLProtocolEnum BBURLProtocol;
 @interface BBURL : NSObject {
 @private
     NSString *urlString;
-    
+    NSString *deviceID;
+    NSString *resourceID;
     BBURLProtocol urlProtocol;
-    NSString *deviceString;
-    NSString *resourceString;
 }
 
 @property (readonly) NSString *urlString;
-
+@property (readonly) NSString *deviceID;
+@property (readonly) NSString *resourceID;
 @property (readonly) BBURLProtocol urlProtocol;
-@property (readonly) NSString *deviceString;
-@property (readonly) NSString *resourceString;
 
-- (id)initWithURL:(NSString *)url;
+- (id)initWithBBURL:(NSString *)url;
 
 - (BOOL)isFile;
 - (BOOL)isHTTP;
@@ -47,6 +46,7 @@ typedef enum BBURLProtocolEnum BBURLProtocol;
 - (BOOL)isApps;
 - (BOOL)isBook;
 - (BOOL)isApp;
+- (BOOL)isUser;
 
 + (NSString *)makeURLWithProtocol:(BBURLProtocol)protocol device:(NSString *)deviceID resource:(NSString *)resourceID;
 + (NSString *)makeShelfURLWithDevice:(NSString *)deviceID;
@@ -58,5 +58,6 @@ typedef enum BBURLProtocolEnum BBURLProtocol;
 + (NSString *)makeBookURL:(NSString *)bookID;
 + (NSString *)makeAppURLWithDevice:(NSString *)deviceID app:(NSString *)appID;
 + (NSString *)makeAppURL:(NSString *)appID;
++ (NSString *)makeUserURL:(NSString *)userID;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SideBarController.h"
+#import "BBURL.h"
 #import "ChildNode.h"
 #import "ImageAndTextCell.h"
 #import "SeparatorCell.h"
@@ -14,13 +15,13 @@
 
 #define COLUMNID_NAME		@"COLUMN_MAIN"
 
+// TODO: All following should be put in an i18n string list
 #define LIBRARY_NAME        @"LIBRARY"
 #define DEVICES_NAME        @"DEVICES"
 #define ACCOUNTS_NAME       @"ACCOUNTS"
 
-#define UNTITLED_NAME		@"Untitled"
-#define FILE_PATH_PREFIX	@"/"
-#define HTTP_PREFIX			@"http://"
+#define DEFAULT_NODE_TITLE  @"Untitled Node"
+#define DEFAULT_NODE_URL    @""
 
 
 // --------------------------------------------------------------------
@@ -100,7 +101,7 @@
 // --------------------------------------------------------------------
 - (void)initReusedIcons {
     // Cache the reused icon images.
-    // TODO: These 2 icons are just for demo
+    // TODO: These icons are just for demo
     imageFolder = [[[NSWorkspace sharedWorkspace] iconForFileType:NSFileTypeForHFSTypeCode(kGenericFolderIcon)] retain];
     [imageFolder setSize:NSMakeSize(16, 16)];
     
@@ -263,9 +264,8 @@
 				[node setNodeTitle:[[NSFileManager defaultManager] displayNameAtPath:[node urlString]]];
 		}
 		else {
-            // TODO: Needs correct default node setting
-			[node setNodeTitle:UNTITLED_NAME];
-			[node setURL:HTTP_PREFIX];
+			[node setNodeTitle:DEFAULT_NODE_TITLE];
+			[node setURL:DEFAULT_NODE_URL];
 		}
 	}
 	
@@ -298,8 +298,8 @@
 	
 	// Add all local library resource
     // TODO: These child nodes are just for demo
-    [self addChild:@"Books" withURL:@"shelf://local" selectParent:YES];
-    [self addChild:@"Apps" withURL:@"apps://local" selectParent:YES];
+    [self addChild:@"Books" withURL:[BBURL makeShelfURL] selectParent:YES];
+    [self addChild:@"Apps" withURL:[BBURL makeAppsURL] selectParent:YES];
     
 	[self selectParentFromSelection];
 }
@@ -309,10 +309,13 @@
     
 	// Add all connected devices
     // TODO: These child nodes are just for demo
-    [self addFolder:@"Neo's Bambook" withURL:@"device://banbook/0001" selectParent:NO];
-    [self addChild:@"Books" withURL:@"shelf://bambook/0001" selectParent:YES];
-    [self addChild:@"Apps" withURL:@"apps://bambook/0001" selectParent:YES];
+    NSString *deviceID = @"bb01";
+    
+    [self addFolder:@"Neo's Bambook" withURL:[BBURL makeDeviceURLWithDevice:deviceID] selectParent:NO];
+    [self addChild:@"Books" withURL:[BBURL makeShelfURLWithDevice:deviceID] selectParent:YES];
+    [self addChild:@"Apps" withURL:[BBURL makeAppsURLWithDevice:deviceID] selectParent:YES];
 	[self selectParentFromSelection];
+    
     // TODO: Here we can add other devices
 
 	[self selectParentFromSelection];
@@ -323,7 +326,9 @@
     
 	// Add all managed accounts
     // TODO: These child nodes are just for demo
-    [self addChild:@"Neo Lee" withURL:@"user://neo" selectParent:NO];
+    NSString *userID = @"neo";
+    
+    [self addChild:@"Neo Lee" withURL:[BBURL makeUserURL:userID] selectParent:NO];
     
     [self selectParentFromSelection];
 }
@@ -412,40 +417,39 @@
 
 
 - (NSImage *)prepareIconForItem:(id)item {
+    // Check if it's a special folder (RESOURCE, DEVICES or ACCOUNTS), we don't want it to have an icon
+    if ([self isSpecialGroup:item]) {
+        return nil;
+    }
+
     NSImage *imageIcon = nil;
     
     if (item) {
-        if ([item isLeaf]) {
-            NSString *urlStr = [item urlString];
-            
-            if (urlStr) {
-                if ([item isLeaf]) {
-                    // TODO: Icon should be choosen via more thorough protocol analysis on url string
-                    if ([urlStr hasPrefix:HTTP_PREFIX])
-                        imageIcon = imageURL;
-                    else if ([urlStr hasPrefix:FILE_PATH_PREFIX])
-                        imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
-                    else
-                        imageIcon = imageDefault;
-                }
-                else {
-                    imageIcon = imageFolder;
-                }
-            }
-            else {
-                // It's a separator, don't bother with the icon
-            }
-        }
-        else {
-            // Check if it's a special folder (RESOURCE, DEVICES or ACCOUNTS), we don't want it to have an icon
-            if ([self isSpecialGroup:item]) {
-                imageIcon = nil;
-            }
-            else {
-                // It's a folder, use the folderImage as its icon
-                imageIcon = imageFolder;
-            }
-        }
+        NSString *urlStr = [item urlString];
+        BBURL *bburl = [[BBURL alloc] initWithBBURL:urlStr];
+        
+        // DEBUG: Use the following line to verify BBURL parsing
+//        NSLog(@"BBURL:{%@, %d, %@, %@}", [bburl urlString], [bburl urlProtocol], [bburl deviceID], [bburl resourceID]);
+        
+        // TODO: Set corresponding icons via node protocol
+        if ([bburl isFile])
+            imageIcon = [[NSWorkspace sharedWorkspace] iconForFile:urlStr];
+        else if ([bburl isHTTP])
+            imageIcon = imageURL;
+        else if ([bburl isDevice])
+            imageIcon = imageDefault;
+        else if ([bburl isShelf])
+            imageIcon = imageDefault;
+        else if ([bburl isApps])
+            imageIcon = imageDefault;
+        else if ([bburl isBook])
+            imageIcon = imageDefault;
+        else if ([bburl isApp])
+            imageIcon = imageDefault;
+        else if ([bburl isUser])
+            imageIcon = imageDefault;
+        else
+            imageIcon = imageDefault;
     }
     
     return imageIcon;
