@@ -8,6 +8,7 @@
 
 #import "iBambookAppDelegate.h"
 #import "SideBarController.h"
+#import "BBURL.h"
 
 
 #define kMinSideBarWidth 200.0f
@@ -94,7 +95,11 @@
     }
     
     // TODO: Load corresponding content view via selected item's URL
+    BBURL *bburl = [[BBURL alloc] initWithBBURL:urlString];
     
+    if ([bburl isShelf]) {
+        
+    }
 }
 
 

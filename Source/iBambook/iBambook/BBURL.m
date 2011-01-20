@@ -140,6 +140,11 @@
     return (urlProtocol == BB_USER);
 }
 
+- (BOOL)isDeviceLocal
+{
+    return [deviceID isEqualToString:DEVICE_LOCAL];
+}
+
 
 #pragma mark BBURL makeURL Class Methods
 

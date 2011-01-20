@@ -48,6 +48,8 @@ typedef enum BBURLProtocolEnum BBURLProtocol;
 - (BOOL)isApp;
 - (BOOL)isUser;
 
+- (BOOL)isDeviceLocal;
+
 + (NSString *)makeURLWithProtocol:(BBURLProtocol)protocol device:(NSString *)deviceID resource:(NSString *)resourceID;
 + (NSString *)makeShelfURLWithDevice:(NSString *)deviceID;
 + (NSString *)makeShelfURL;
