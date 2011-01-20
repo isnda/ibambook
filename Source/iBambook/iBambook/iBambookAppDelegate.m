@@ -7,8 +7,10 @@
 //
 
 #import "iBambookAppDelegate.h"
-#import "SideBarController.h"
 #import "BBURL.h"
+#import "SideBarController.h"
+#import "BBShelfController.h"
+#import "BBDeviceController.h"
 
 
 #define kMinSideBarWidth 200.0f
@@ -97,8 +99,38 @@
     // TODO: Load corresponding content view via selected item's URL
     BBURL *bburl = [[BBURL alloc] initWithBBURL:urlString];
     
+    NSView *newContentView = nil;
     if ([bburl isShelf]) {
+        if ([bburl isDeviceLocal]) {
+            BBShelfController *shelfController = [[BBShelfController alloc] 
+                                                  initWithNibName:@"BBShelfController" bundle:nil];
+            // TODO: Set controller properties
+
+            newContentView = [shelfController view];
+        } else {
+            
+        }
+    } else if ([bburl isApps]) {
         
+    } else if ([bburl isDevice]) {
+        BBDeviceController *deviceController = [[BBDeviceController alloc] 
+                                                initWithNibName:@"BBDeviceController" bundle:nil];
+        // TODO: Set controller properties
+        
+        newContentView = [deviceController view];
+    }
+
+    if (newContentView) {
+        // Switch to new subview
+        [self removeContentView];
+        currentContentView = nil;
+        [containerView addSubview:newContentView];
+        currentContentView = newContentView;
+        
+        // Make sure newly added content subview is placed and resizes correctly
+        [currentContentView setFrame:[[currentContentView superview] frame]];    
+        [currentContentView setFrameOrigin:NSMakePoint(0,0)];
+        [currentContentView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
     }
 }
 

@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		B50723C412E3E4D30090BB52 /* SideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SideBarController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B50723C512E3E4D30090BB52 /* SideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SideBarController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B50723DA12E3ED510090BB52 /* SideBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideBarController.xib; path = Controllers/SideBarController.xib; sourceTree = "<group>"; };
+		B50723DA12E3ED510090BB52 /* SideBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideBarController.xib; sourceTree = "<group>"; };
 		B54DB20012DF0586006E12E8 /* iBambook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBambook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54DB20412DF0586006E12E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B54DB20712DF0586006E12E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -48,10 +48,10 @@
 		B5B8AB8212E811A400E50496 /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBURL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B5E5875712E6974600FE7C02 /* BBDeviceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceController.h; sourceTree = "<group>"; };
 		B5E5875812E6974600FE7C02 /* BBDeviceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBDeviceController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B5E5875912E6974600FE7C02 /* BBDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBDeviceController.xib; path = Controllers/BBDeviceController.xib; sourceTree = "<group>"; };
+		B5E5875912E6974600FE7C02 /* BBDeviceController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceController.xib; sourceTree = "<group>"; };
 		B5E5875D12E6977100FE7C02 /* BBShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBShelfController.h; sourceTree = "<group>"; };
 		B5E5875E12E6977100FE7C02 /* BBShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBShelfController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B5E5875F12E6977100FE7C02 /* BBShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BBShelfController.xib; path = Controllers/BBShelfController.xib; sourceTree = "<group>"; };
+		B5E5875F12E6977100FE7C02 /* BBShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBShelfController.xib; sourceTree = "<group>"; };
 		B5E5876412E6C2A300FE7C02 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = ImageAndTextCell.h; path = iBambook/SideBar/Cells/ImageAndTextCell.h; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B5E5876512E6C2A300FE7C02 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = ImageAndTextCell.m; path = iBambook/SideBar/Cells/ImageAndTextCell.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B5E5876612E6C2A300FE7C02 /* SeparatorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeparatorCell.h; path = iBambook/SideBar/Cells/SeparatorCell.h; sourceTree = SOURCE_ROOT; };
@@ -93,10 +93,13 @@
 			children = (
 				B50723C412E3E4D30090BB52 /* SideBarController.h */,
 				B50723C512E3E4D30090BB52 /* SideBarController.m */,
+				B50723DA12E3ED510090BB52 /* SideBarController.xib */,
 				B5E5875D12E6977100FE7C02 /* BBShelfController.h */,
 				B5E5875E12E6977100FE7C02 /* BBShelfController.m */,
+				B5E5875F12E6977100FE7C02 /* BBShelfController.xib */,
 				B5E5875712E6974600FE7C02 /* BBDeviceController.h */,
 				B5E5875812E6974600FE7C02 /* BBDeviceController.m */,
+				B5E5875912E6974600FE7C02 /* BBDeviceController.xib */,
 			);
 			name = Controllers;
 			path = iBambook/Controllers;
@@ -161,9 +164,6 @@
 				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
 				B5B8AB8112E811A400E50496 /* BBURL.h */,
 				B5B8AB8212E811A400E50496 /* BBURL.m */,
-				B50723DA12E3ED510090BB52 /* SideBarController.xib */,
-				B5E5875F12E6977100FE7C02 /* BBShelfController.xib */,
-				B5E5875912E6974600FE7C02 /* BBDeviceController.xib */,
 				B54DB21912DF0586006E12E8 /* MainMenu.xib */,
 				B54DB20B12DF0586006E12E8 /* Supporting Files */,
 			);
