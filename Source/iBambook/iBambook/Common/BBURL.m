@@ -1,5 +1,5 @@
 //
-//  BBURLParser.m
+//  BBURL.m
 //  iBambook
 //
 //  Created by Neo Lee on 1/20/11.
