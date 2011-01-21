@@ -20,7 +20,7 @@
 		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
-		B5B8AB8312E811A400E50496 /* BBURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B8AB8212E811A400E50496 /* BBURL.m */; };
+		B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB6DB112E93B6D0027568D /* BBURL.m */; };
 		B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */; };
 		B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */; };
 		B5C42CAB12E87CAF00FA4CA0 /* BBUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA912E87CAF00FA4CA0 /* BBUserController.m */; };
@@ -61,8 +61,8 @@
 		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = iBambookAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iBambookAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		B5B8AB8112E811A400E50496 /* BBURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = BBURL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		B5B8AB8212E811A400E50496 /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BBURL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B5BB6DB012E93B6D0027568D /* BBURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBURL.h; path = iBambook/Common/BBURL.h; sourceTree = "<group>"; };
+		B5BB6DB112E93B6D0027568D /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBURL.m; path = iBambook/Common/BBURL.m; sourceTree = "<group>"; };
 		B5C42CA312E87C7B00FA4CA0 /* BBDeviceAppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceAppsController.h; sourceTree = "<group>"; };
 		B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceAppsController.m; sourceTree = "<group>"; };
 		B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceAppsController.xib; sourceTree = "<group>"; };
@@ -159,6 +159,7 @@
 		B54DB1F512DF0586006E12E8 = {
 			isa = PBXGroup;
 			children = (
+				B5BB6DAF12E93B5A0027568D /* Common */,
 				B5E5876312E6C24200FE7C02 /* SideBar */,
 				B50723C312E3E4D30090BB52 /* Controllers */,
 				B54DB20A12DF0586006E12E8 /* iBambook */,
@@ -199,8 +200,6 @@
 			children = (
 				B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */,
 				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
-				B5B8AB8112E811A400E50496 /* BBURL.h */,
-				B5B8AB8212E811A400E50496 /* BBURL.m */,
 				B54DB21912DF0586006E12E8 /* MainMenu.xib */,
 				B54DB20B12DF0586006E12E8 /* Supporting Files */,
 			);
@@ -217,6 +216,15 @@
 				B54DB21312DF0586006E12E8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5BB6DAF12E93B5A0027568D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B5BB6DB012E93B6D0027568D /* BBURL.h */,
+				B5BB6DB112E93B6D0027568D /* BBURL.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		B5E5876312E6C24200FE7C02 /* SideBar */ = {
@@ -308,12 +316,12 @@
 				B5E5877012E6C2AF00FE7C02 /* BaseNode.m in Sources */,
 				B5E5877112E6C2AF00FE7C02 /* ChildNode.m in Sources */,
 				B5E5877212E6C2AF00FE7C02 /* NSArrayExtensions.m in Sources */,
-				B5B8AB8312E811A400E50496 /* BBURL.m in Sources */,
 				B50D061B12E874F9006F2DA8 /* BBContentController.m in Sources */,
 				B50D062012E87B43006F2DA8 /* BBAppsController.m in Sources */,
 				B50D062512E87C0B006F2DA8 /* BBDeviceShelfController.m in Sources */,
 				B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */,
 				B5C42CAB12E87CAF00FA4CA0 /* BBUserController.m in Sources */,
+				B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
