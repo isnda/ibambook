@@ -894,7 +894,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="759168835">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">138413056</int>
-								<string key="NSContents">Finished synchronization</string>
+								<string key="NSContents">同步完毕</string>
 								<object class="NSFont" key="NSSupport" id="502295567">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">13</double>
@@ -980,7 +980,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="66245107">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">1212158208</int>
-								<string key="NSContents">All books are synchronized.</string>
+								<string key="NSContents">设备上的所有资源已经同步</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">10</double>
@@ -1116,7 +1116,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="71520367">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">138413056</int>
-								<string key="NSContents">4 of 156 books selected, 6.4 MB</string>
+								<string key="NSContents">已选取：4 | 156 本书, 共 6.4 MB</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">11</double>
@@ -1133,7 +1133,7 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="368565756"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
+				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMinSize">{800, 502}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
 			</object>

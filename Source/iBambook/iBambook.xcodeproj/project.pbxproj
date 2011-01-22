@@ -61,6 +61,7 @@
 		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = iBambookAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iBambookAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B591B3DB12EAB77800465B15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/neo/Code/Repo/ibambook/Source/iBambook/iBambook/zh-Hans.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
 		B5BB6DB012E93B6D0027568D /* BBURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBURL.h; path = iBambook/Common/BBURL.h; sourceTree = "<group>"; };
 		B5BB6DB112E93B6D0027568D /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBURL.m; path = iBambook/Common/BBURL.m; sourceTree = "<group>"; };
 		B5C42CA312E87C7B00FA4CA0 /* BBDeviceAppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceAppsController.h; sourceTree = "<group>"; };
@@ -270,6 +271,10 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans-CN",
+				"zh-Hant",
+				"zh-Hans",
+				zh,
 			);
 			mainGroup = B54DB1F512DF0586006E12E8;
 			productRefGroup = B54DB20112DF0586006E12E8 /* Products */;
@@ -348,6 +353,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B54DB21A12DF0586006E12E8 /* en */,
+				B591B3DB12EAB77800465B15 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
