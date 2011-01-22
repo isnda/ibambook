@@ -15,13 +15,13 @@
 
 #define COLUMNID_NAME		@"COLUMN_MAIN"
 
-// TODO: All following should be put in an i18n string list
-#define LIBRARY_NAME        @"LIBRARY"
-#define DEVICES_NAME        @"DEVICES"
-#define ACCOUNTS_NAME       @"ACCOUNTS"
+// Keys for localized strings
+#define LIBRARY_TITLE       @"LIBRARY"
+#define DEVICES_TITLE       @"DEVICES"
+#define ACCOUNTS_TITLE      @"ACCOUNTS"
 
 #define DEFAULT_NODE_TITLE  @"Untitled Node"
-#define DEFAULT_NODE_URL    @""
+#define DEFAULT_NODE_URL    @"Empty Node URL"
 
 
 // --------------------------------------------------------------------
@@ -264,8 +264,8 @@
 				[node setNodeTitle:[[NSFileManager defaultManager] displayNameAtPath:[node urlString]]];
 		}
 		else {
-			[node setNodeTitle:DEFAULT_NODE_TITLE];
-			[node setURL:DEFAULT_NODE_URL];
+			[node setNodeTitle:NSLocalizedString(DEFAULT_NODE_TITLE, DEFAULT_NODE_TITLE)];
+			[node setURL:NSLocalizedString(DEFAULT_NODE_URL, @"")];
 		}
 	}
 	
@@ -294,7 +294,7 @@
 }
 
 - (void)addLibrarySection {
-	[self addFolder:LIBRARY_NAME];
+	[self addFolder:NSLocalizedString(LIBRARY_TITLE, LIBRARY_TITLE)];
 	
 	// Add all local library resource
     // TODO: These child nodes are just for demo
@@ -305,7 +305,7 @@
 }
 
 - (void)addDevicesSection {
-	[self addFolder:DEVICES_NAME];
+	[self addFolder:NSLocalizedString(DEVICES_TITLE, DEVICES_TITLE)];
     
 	// Add all connected devices
     // TODO: These child nodes are just for demo
@@ -322,7 +322,7 @@
 }
 
 - (void)addAccountsSection {
-    [self addFolder:ACCOUNTS_NAME];
+    [self addFolder:NSLocalizedString(ACCOUNTS_TITLE, ACCOUNTS_TITLE)];
     
 	// Add all managed accounts
     // TODO: These child nodes are just for demo
@@ -367,9 +367,9 @@
     // Using node title to determine the topest level(i.e. special) folder
     // TODO: Should be more general
 	return ([groupNode nodeIcon] == nil &&
-			[[groupNode nodeTitle] isEqualToString:LIBRARY_NAME] || 
-            [[groupNode nodeTitle] isEqualToString:DEVICES_NAME] || 
-            [[groupNode nodeTitle] isEqualToString:ACCOUNTS_NAME]);
+			[[groupNode nodeTitle] isEqualToString:NSLocalizedString(LIBRARY_TITLE, LIBRARY_TITLE)] || 
+            [[groupNode nodeTitle] isEqualToString:NSLocalizedString(DEVICES_TITLE, DEVICES_TITLE)] || 
+            [[groupNode nodeTitle] isEqualToString:NSLocalizedString(ACCOUNTS_TITLE, ACCOUNTS_TITLE)]);
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item;
