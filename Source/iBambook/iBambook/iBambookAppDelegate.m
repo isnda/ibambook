@@ -28,15 +28,23 @@
 @synthesize sideBarView;
 @synthesize containerView;
 
+
+#pragma mark - Main Window Lifecycle
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    SideBarController* sideBarController = [[SideBarController alloc] initWithNibName:@"SideBarController" bundle:nil];
+    SideBarController *sideBarController = [[SideBarController alloc] initWithNibName:@"SideBarController" bundle:nil];
     
     // SideBarController uses this delegate control content view switch
     [sideBarController setAppDelegate:self];
     
-    NSView* v1 = [sideBarController view];
-    [v1 setFrame:[sideBarView frame]];
-    [sideBarView addSubview:v1];
+    NSView *v = [sideBarController view];
+    [v setFrame:[sideBarView frame]];
+    [sideBarView addSubview:v];
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
 }
 
 
