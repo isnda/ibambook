@@ -20,6 +20,7 @@
 		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
+		B591B3DE12EAB95600465B15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B591B3E012EAB95600465B15 /* Localizable.strings */; };
 		B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB6DB112E93B6D0027568D /* BBURL.m */; };
 		B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */; };
 		B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C42CA512E87C7B00FA4CA0 /* BBDeviceAppsController.xib */; };
@@ -62,6 +63,8 @@
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iBambookAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B591B3DB12EAB77800465B15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "/Users/neo/Code/Repo/ibambook/Source/iBambook/iBambook/zh-Hans.lproj/MainMenu.xib"; sourceTree = "<absolute>"; };
+		B591B3DF12EAB95600465B15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B591B3E212EAB97900465B15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "/Users/neo/Code/Repo/ibambook/Source/iBambook/iBambook/zh-Hans.lproj/Localizable.strings"; sourceTree = "<absolute>"; };
 		B5BB6DB012E93B6D0027568D /* BBURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBURL.h; path = iBambook/Common/BBURL.h; sourceTree = "<group>"; };
 		B5BB6DB112E93B6D0027568D /* BBURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBURL.m; path = iBambook/Common/BBURL.m; sourceTree = "<group>"; };
 		B5C42CA312E87C7B00FA4CA0 /* BBDeviceAppsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceAppsController.h; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 			children = (
 				B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */,
 				B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */,
+				B591B3E012EAB95600465B15 /* Localizable.strings */,
 				B54DB21912DF0586006E12E8 /* MainMenu.xib */,
 				B54DB20B12DF0586006E12E8 /* Supporting Files */,
 			);
@@ -301,6 +305,7 @@
 				B50D062612E87C0B006F2DA8 /* BBDeviceShelfController.xib in Resources */,
 				B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */,
 				B5C42CAC12E87CAF00FA4CA0 /* BBUserController.xib in Resources */,
+				B591B3DE12EAB95600465B15 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +361,15 @@
 				B591B3DB12EAB77800465B15 /* zh-Hans */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		B591B3E012EAB95600465B15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B591B3DF12EAB95600465B15 /* en */,
+				B591B3E212EAB97900465B15 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
