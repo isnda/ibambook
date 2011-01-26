@@ -6,7 +6,6 @@
   Copyright 2011 Shanda Innovations. All rights reserved.
 */
 
-
 /* Strings for side bar nodes */
 "LIBRARY"           = "资源";
 "DEVICES"           = "设备";
