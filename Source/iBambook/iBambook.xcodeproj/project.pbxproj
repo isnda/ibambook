@@ -14,6 +14,9 @@
 		B50D062112E87B43006F2DA8 /* BBAppsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D061F12E87B43006F2DA8 /* BBAppsController.xib */; };
 		B50D062512E87C0B006F2DA8 /* BBDeviceShelfController.m in Sources */ = {isa = PBXBuildFile; fileRef = B50D062312E87C0B006F2DA8 /* BBDeviceShelfController.m */; };
 		B50D062612E87C0B006F2DA8 /* BBDeviceShelfController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50D062412E87C0B006F2DA8 /* BBDeviceShelfController.xib */; };
+		B50EFB0213095A400023F465 /* MGRecessedPopUpButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EFAFD13095A400023F465 /* MGRecessedPopUpButtonCell.m */; };
+		B50EFB0313095A400023F465 /* MGScopeBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B50EFAFF13095A400023F465 /* MGScopeBar.m */; };
+		B50EFB0413095A400023F465 /* Source Code License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B50EFB0113095A400023F465 /* Source Code License.rtf */; };
 		B54DB20512DF0586006E12E8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54DB20412DF0586006E12E8 /* Cocoa.framework */; };
 		B54DB20F12DF0586006E12E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B54DB20D12DF0586006E12E8 /* InfoPlist.strings */; };
 		B54DB21212DF0586006E12E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21112DF0586006E12E8 /* main.m */; };
@@ -49,6 +52,12 @@
 		B50D062212E87C0B006F2DA8 /* BBDeviceShelfController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDeviceShelfController.h; sourceTree = "<group>"; };
 		B50D062312E87C0B006F2DA8 /* BBDeviceShelfController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDeviceShelfController.m; sourceTree = "<group>"; };
 		B50D062412E87C0B006F2DA8 /* BBDeviceShelfController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBDeviceShelfController.xib; sourceTree = "<group>"; };
+		B50EFAFC13095A400023F465 /* MGRecessedPopUpButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRecessedPopUpButtonCell.h; sourceTree = "<group>"; };
+		B50EFAFD13095A400023F465 /* MGRecessedPopUpButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRecessedPopUpButtonCell.m; sourceTree = "<group>"; };
+		B50EFAFE13095A400023F465 /* MGScopeBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGScopeBar.h; sourceTree = "<group>"; };
+		B50EFAFF13095A400023F465 /* MGScopeBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGScopeBar.m; sourceTree = "<group>"; };
+		B50EFB0013095A400023F465 /* MGScopeBarDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGScopeBarDelegateProtocol.h; sourceTree = "<group>"; };
+		B50EFB0113095A400023F465 /* Source Code License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
 		B54DB20012DF0586006E12E8 /* iBambook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBambook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54DB20412DF0586006E12E8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B54DB20712DF0586006E12E8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -160,11 +169,26 @@
 			path = iBambook/TreeNodes;
 			sourceTree = "<group>";
 		};
+		B50EFAFB13095A400023F465 /* MGScopeBar */ = {
+			isa = PBXGroup;
+			children = (
+				B50EFAFC13095A400023F465 /* MGRecessedPopUpButtonCell.h */,
+				B50EFAFD13095A400023F465 /* MGRecessedPopUpButtonCell.m */,
+				B50EFAFE13095A400023F465 /* MGScopeBar.h */,
+				B50EFAFF13095A400023F465 /* MGScopeBar.m */,
+				B50EFB0013095A400023F465 /* MGScopeBarDelegateProtocol.h */,
+				B50EFB0113095A400023F465 /* Source Code License.rtf */,
+			);
+			name = MGScopeBar;
+			path = iBambook/MGScopeBar;
+			sourceTree = "<group>";
+		};
 		B54DB1F512DF0586006E12E8 = {
 			isa = PBXGroup;
 			children = (
 				B5BB6DAF12E93B5A0027568D /* Common */,
 				B5E5876312E6C24200FE7C02 /* SideBar */,
+				B50EFAFB13095A400023F465 /* MGScopeBar */,
 				B50723C312E3E4D30090BB52 /* Controllers */,
 				B54DB20A12DF0586006E12E8 /* iBambook */,
 				B54DB20312DF0586006E12E8 /* Frameworks */,
@@ -307,6 +331,7 @@
 				B5C42CA712E87C7B00FA4CA0 /* BBDeviceAppsController.xib in Resources */,
 				B5C42CAC12E87CAF00FA4CA0 /* BBUserController.xib in Resources */,
 				B591B3DE12EAB95600465B15 /* Localizable.strings in Resources */,
+				B50EFB0413095A400023F465 /* Source Code License.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +358,8 @@
 				B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */,
 				B5C42CAB12E87CAF00FA4CA0 /* BBUserController.m in Sources */,
 				B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */,
+				B50EFB0213095A400023F465 /* MGRecessedPopUpButtonCell.m in Sources */,
+				B50EFB0313095A400023F465 /* MGScopeBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

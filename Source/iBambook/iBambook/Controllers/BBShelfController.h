@@ -8,11 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import "BBContentController.h"
+#import "MGScopeBarDelegateProtocol.h"
 
 
-@interface BBShelfController : BBContentController {
+@interface BBShelfController : BBContentController <MGScopeBarDelegate> {
 @private
-    
+    IBOutlet MGScopeBar *scopeBar;
+
+	NSMutableArray *scopeGroups;
 }
+
+@property(retain) NSMutableArray *scopeGroups;
 
 @end
