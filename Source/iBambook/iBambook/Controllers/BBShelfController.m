@@ -26,6 +26,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Initialize the scope bar
         self.scopeGroups = [NSMutableArray arrayWithCapacity:0];
+        scopeBar.smartResizeEnabled = NO;
         scopeBar.delegate = self;
         
         // Add the unique group of items
@@ -38,7 +39,7 @@
                           nil];
         
         [self.scopeGroups addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                                     @"Sort by", GROUP_LABEL, 
+//                                     @"Sort by", GROUP_LABEL, 
                                      [NSNumber numberWithBool:NO], GROUP_SEPARATOR, 
                                      [NSNumber numberWithInt:MGRadioSelectionMode], GROUP_SELECTION_MODE, // single selection group.
                                      items, GROUP_ITEMS, 
