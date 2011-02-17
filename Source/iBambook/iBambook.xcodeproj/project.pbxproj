@@ -23,6 +23,7 @@
 		B54DB21512DF0586006E12E8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21312DF0586006E12E8 /* Credits.rtf */; };
 		B54DB21812DF0586006E12E8 /* iBambookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */; };
 		B54DB21B12DF0586006E12E8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54DB21912DF0586006E12E8 /* MainMenu.xib */; };
+		B579E59A130CC932001346D1 /* SHSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = B579E599130CC932001346D1 /* SHSplitView.m */; };
 		B591B3DE12EAB95600465B15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B591B3E012EAB95600465B15 /* Localizable.strings */; };
 		B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BB6DB112E93B6D0027568D /* BBURL.m */; };
 		B5C42CA612E87C7B00FA4CA0 /* BBDeviceAppsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C42CA412E87C7B00FA4CA0 /* BBDeviceAppsController.m */; };
@@ -71,6 +72,8 @@
 		B54DB21612DF0586006E12E8 /* iBambookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = iBambookAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B54DB21712DF0586006E12E8 /* iBambookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = iBambookAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B54DB21A12DF0586006E12E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B579E598130CC932001346D1 /* SHSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHSplitView.h; path = iBambook/Custom/SHSplitView.h; sourceTree = "<group>"; };
+		B579E599130CC932001346D1 /* SHSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHSplitView.m; path = iBambook/Custom/SHSplitView.m; sourceTree = "<group>"; };
 		B591B3DB12EAB77800465B15 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		B591B3DF12EAB95600465B15 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B591B3E212EAB97900465B15 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		B54DB1F512DF0586006E12E8 = {
 			isa = PBXGroup;
 			children = (
+				B579E597130CC8F0001346D1 /* Custom */,
 				B5BB6DAF12E93B5A0027568D /* Common */,
 				B5E5876312E6C24200FE7C02 /* SideBar */,
 				B50EFAFB13095A400023F465 /* MGScopeBar */,
@@ -245,6 +249,15 @@
 				B54DB21312DF0586006E12E8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B579E597130CC8F0001346D1 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B579E598130CC932001346D1 /* SHSplitView.h */,
+				B579E599130CC932001346D1 /* SHSplitView.m */,
+			);
+			name = Custom;
 			sourceTree = "<group>";
 		};
 		B5BB6DAF12E93B5A0027568D /* Common */ = {
@@ -360,6 +373,7 @@
 				B5BB6DB212E93B6D0027568D /* BBURL.m in Sources */,
 				B50EFB0213095A400023F465 /* MGRecessedPopUpButtonCell.m in Sources */,
 				B50EFB0313095A400023F465 /* MGScopeBar.m in Sources */,
+				B579E59A130CC932001346D1 /* SHSplitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

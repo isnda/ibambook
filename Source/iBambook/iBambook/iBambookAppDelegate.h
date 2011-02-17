@@ -7,19 +7,20 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SHSplitView.h"
 
 @interface iBambookAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSView *currentContentView;
     
     NSWindow *window;
-    NSSplitView *splitView;
+    SHSplitView *splitView;
     NSView *sideBarView;
     NSView *containerView;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSSplitView *splitView;
+@property (assign) IBOutlet SHSplitView *splitView;
 @property (assign) IBOutlet NSView *sideBarView;
 @property (assign) IBOutlet NSView *containerView;
 

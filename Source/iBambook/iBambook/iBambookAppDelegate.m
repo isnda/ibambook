@@ -40,6 +40,8 @@
     NSView *v = [sideBarController view];
     [v setFrame:[sideBarView frame]];
     [sideBarView addSubview:v];
+    [splitView setDividerColor:[[sideBarController sideBarView] backgroundColor]];
+    NSLog(@"%@", [splitView dividerColor]);
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender

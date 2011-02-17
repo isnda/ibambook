@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10J567</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1278</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1294</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1278</string>
+			<string key="NS.object.0">1294</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -860,7 +860,7 @@
 								<object class="NSCustomView" id="101570978">
 									<reference key="NSNextResponder" ref="38823893"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrameSize">{247, 397}</string>
+									<string key="NSFrameSize">{248, 397}</string>
 									<reference key="NSSuperview" ref="38823893"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="156032841"/>
@@ -869,7 +869,7 @@
 								<object class="NSCustomView" id="156032841">
 									<reference key="NSNextResponder" ref="38823893"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{248, 0}, {552, 397}}</string>
+									<string key="NSFrame">{{249, 0}, {551, 397}}</string>
 									<reference key="NSSuperview" ref="38823893"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="711404349"/>
@@ -1112,6 +1112,7 @@
 							<string key="NSFrame">{{25, 2}, {749, 14}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="71520367">
 								<int key="NSCellFlags">68288064</int>
@@ -2145,6 +2146,7 @@
 							<reference ref="439893737"/>
 						</object>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Window - iBambook</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">372</int>
@@ -2525,6 +2527,7 @@
 					<string>492.IBPluginDependency</string>
 					<string>5.IBPluginDependency</string>
 					<string>5.ImportedFromIB2</string>
+					<string>533.CustomClassName</string>
 					<string>533.IBPluginDependency</string>
 					<string>534.IBPluginDependency</string>
 					<string>535.IBPluginDependency</string>
@@ -2731,6 +2734,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>SHSplitView</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2864,6 +2868,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NSDocument.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SHSplitView</string>
+					<string key="superclassName">NSSplitView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SHSplitView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
