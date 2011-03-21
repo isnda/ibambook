@@ -41,7 +41,6 @@
     [v setFrame:[sideBarView frame]];
     [sideBarView addSubview:v];
     [splitView setDividerColor:[[sideBarController sideBarView] backgroundColor]];
-    NSLog(@"%@", [splitView dividerColor]);
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
@@ -111,7 +110,7 @@
         return;
     }
     
-    // TODO: Load corresponding content view via selected item's URL
+    // Load corresponding content view via selected item's URL
     BBURL *bburl = [[BBURL alloc] initWithBBURL:urlString];
     
     BBContentController *newContentController = nil;
