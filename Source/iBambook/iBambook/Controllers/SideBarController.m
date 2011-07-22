@@ -366,10 +366,10 @@
 {
     // Using node title to determine the topest level(i.e. special) folder
     // TODO: Should be more general
-	return ([groupNode nodeIcon] == nil &&
+	return ([groupNode nodeIcon] == nil && (
 			[[groupNode nodeTitle] isEqualToString:NSLocalizedString(LIBRARY_TITLE, LIBRARY_TITLE)] || 
             [[groupNode nodeTitle] isEqualToString:NSLocalizedString(DEVICES_TITLE, DEVICES_TITLE)] || 
-            [[groupNode nodeTitle] isEqualToString:NSLocalizedString(ACCOUNTS_TITLE, ACCOUNTS_TITLE)]);
+            [[groupNode nodeTitle] isEqualToString:NSLocalizedString(ACCOUNTS_TITLE, ACCOUNTS_TITLE)]));
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item;
